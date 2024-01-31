@@ -1,26 +1,26 @@
 ---
-import { basics } from "@cv"
-import Section from "@/components/Section.astro"
-import Mail from "@/icons/Mail.astro"
-import Phone from "@/icons/Phone.astro"
-import X from "@/icons/X.astro"
-import LinkedIn from "@/icons/LinkedIn.astro"
-import GitHub from "@/icons/GitHub.astro"
-import WorldMap from "@/icons/WorldMap.astro"
+import { basics } from "@cv";
+import Section from "@/components/Section.astro";
+import Mail from "@/icons/Mail.astro";
+import Phone from "@/icons/Phone.astro";
+import X from "@/icons/X.astro";
+import LinkedIn from "@/icons/LinkedIn.astro";
+import GitHub from "@/icons/GitHub.astro";
+import WorldMap from "@/icons/WorldMap.astro";
 
-const { name, label, image, location, profiles, phone, email } = basics
-const { city, region } = location
+const { name, label, image, location, profiles, phone, email } = basics;
+const { city, region } = location;
 
 const SOCIAL_ICONS: Record<string, any> = {
   GitHub,
   LinkedIn,
   X,
-}
+};
 
-const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
-const linkedUrl = linkedInfo?.url
+const linkedInfo = profiles.find(({ network }) => network === "LinkedIn");
+const linkedUrl = linkedInfo?.url;
 
-const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
+const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
 ---
 
 <Section>
@@ -62,7 +62,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
         }
         {
           profiles.map(({ network, url, username }) => {
-            const Icon = SOCIAL_ICONS[network]
+            const Icon = SOCIAL_ICONS[network];
 
             return (
               <a
@@ -73,7 +73,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
               >
                 <Icon />
               </a>
-            )
+            );
           })
         }
       </footer>
