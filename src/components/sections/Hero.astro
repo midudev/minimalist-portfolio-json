@@ -153,4 +153,10 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     background: #eee;
     border: 1px solid #ddd;
   }
+
+  @media (max-width: 640px) {
+    .container {
+      flex-direction: column-reverse;
+    }
+  }
 </style>
