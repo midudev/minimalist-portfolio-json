@@ -1,5 +1,5 @@
 ---
-import { type SocialIcon } from '@/types'
+import { type SocialIcon } from "@/types"
 import { basics } from "@cv"
 
 const { profiles } = basics
@@ -77,33 +77,26 @@ const profilesInfo = profiles.map(({ network, url }) => {
     hotkey: string
   }
 
-
-  interface InfoWithHandler extends Info {
-    handler: () => void
-  }
-
-  interface NinjaElement extends Element {
-    data: Array<InfoWithHandler>
-  }
-
-  const ninja = document.querySelector("ninja-keys") as NinjaElement
+  const ninja = document.querySelector("ninja-keys")
 
   if (ninja != null) {
     const info = ninja.getAttribute("data-info") ?? "[]"
     const parsedInfo = JSON.parse(info)
 
-    const data = parsedInfo.map(({ url, hotkey, icon, id, section, title }: Info) => {
-      return {
-        id,
-        title,
-        icon,
-        hotkey,
-        section,
-        handler: () => {
-          window.open(url, "_blank")
-        },
+    const data = parsedInfo.map(
+      ({ url, hotkey, icon, id, section, title }: Info) => {
+        return {
+          id,
+          title,
+          icon,
+          hotkey,
+          section,
+          handler: () => {
+            window.open(url, "_blank")
+          },
+        }
       }
-    })
+    )
 
     ninja.data = [
       {
