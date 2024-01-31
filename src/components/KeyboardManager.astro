@@ -1,9 +1,10 @@
 ---
+import { type SocialIcon } from '@/types'
 import { basics } from "@cv"
 
 const { profiles } = basics
 
-const SOCIAL_ICONS: Record<string, string> = {
+const SOCIAL_ICONS: SocialIcon = {
   GitHub: `<svg
   width="16"
   height="16"
@@ -67,17 +68,39 @@ const profilesInfo = profiles.map(({ network, url }) => {
 <script>
   import "ninja-keys"
 
-  const ninja = document.querySelector("ninja-keys")
+  interface Info {
+    id: string
+    section: string
+    title: string
+    url: string
+    icon: string
+    hotkey: string
+  }
+
+
+  interface InfoWithHandler extends Info {
+    handler: () => void
+  }
+
+  interface NinjaElement extends Element {
+    data: Array<InfoWithHandler>
+  }
+
+  const ninja = document.querySelector("ninja-keys") as NinjaElement
 
   if (ninja != null) {
     const info = ninja.getAttribute("data-info") ?? "[]"
     const parsedInfo = JSON.parse(info)
 
-    const data = parsedInfo.map((item: any) => {
+    const data = parsedInfo.map(({ url, hotkey, icon, id, section, title }: Info) => {
       return {
-        ...item,
+        id,
+        title,
+        icon,
+        hotkey,
+        section,
         handler: () => {
-          window.open(item.url, "_blank")
+          window.open(url, "_blank")
         },
       }
     })
