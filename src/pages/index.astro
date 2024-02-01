@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import Section from "@/components/Section.astro"
 
 import About from "@/components/sections/About.astro"
 import Education from "@/components/sections/Education.astro"
@@ -10,17 +11,18 @@ import Skills from "@/components/sections/Skills.astro"
 import KeyboardManager from "@/components/KeyboardManager.astro"
 
 import { basics } from "@cv"
+
 const { name, label } = basics
 ---
 
 <Layout title={`Portafolio de ${name} - ${label}`}>
   <main>
-    <Hero />
-    <About />
-    <Experience />
-    <Education />
-    <Projects />
-    <Skills />
+    <Section><Hero /></Section>
+    <Section title="Sobre mí"><About /></Section>
+    <Section title="Experiencia laboral"><Experience /></Section>
+    <Section title="Educación"><Education /></Section>
+    <Section title="Proyectos"><Projects /></Section>
+    <Section title="Habilidades"><Skills /></Section>
   </main>
 
   <KeyboardManager />
