@@ -57,7 +57,12 @@ const profilesInfo = profiles.map(({ network, url }) => {
 ---
 
 <footer class="no-print">
-  Pulsa <kbd>Cmd</kbd> + <kbd>K</kbd> para abrir la paleta de comandos.
+  <div class="screen">
+    Pulsa <kbd>Cmd</kbd> + <kbd>K</kbd> para abrir la paleta de comandos.
+  </div>
+  <div class="mobile">
+    <button id="button-ninja-keys">Click</button> para abrir la paleta de comandos.
+  </div>
 </footer>
 
 <ninja-keys
@@ -76,6 +81,12 @@ const profilesInfo = profiles.map(({ network, url }) => {
     icon: string
     hotkey: string
   }
+
+  const $buttonNinjaKeys = document.querySelector('#button-ninja-keys')
+  $buttonNinjaKeys?.addEventListener('click', () => {
+    const ninja = document.querySelector('ninja-keys')
+    ninja?.open()
+  })
 
   const ninja = document.querySelector("ninja-keys")
 
@@ -123,6 +134,24 @@ const profilesInfo = profiles.map(({ network, url }) => {
     }
   }
 
+  @media (width <= 768px) {
+    .screen {
+      display: none;
+    }
+    .mobile {
+      display: block;
+    }
+  }
+
+  @media (width > 768px) {
+    .screen {
+      display: block;
+    }
+    .mobile {
+      display: none;
+    }
+  }
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -155,5 +184,13 @@ const profilesInfo = profiles.map(({ network, url }) => {
     border-radius: 4px;
     padding: 2px 4px;
     font-size: 12px;
+  }
+
+  button {
+    background: #eee;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 4px;
+    cursor: default;
   }
 </style>
