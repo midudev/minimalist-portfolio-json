@@ -87,19 +87,21 @@ const { image, summary } = basics
     text-wrap: pretty;
   }
 
-  @media print {
-    .no-print {
-      display: none !important;
-    }
-  }
-
   .print {
     display: none !important;
   }
 
   @media print {
+    .no-print {
+      display: none !important;
+    }
+
     .print {
       display: block !important;
+    }
+
+    astro-dev-toolbar {
+      display: none !important;
     }
   }
 </style>

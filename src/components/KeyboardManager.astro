@@ -56,14 +56,27 @@ const profilesInfo = profiles.map(({ network, url }) => {
 })
 ---
 
-<footer id="normal-footer" class="no-print" >
+<footer id="normal-footer" class="no-print">
   Pulsa <kbd>Cmd</kbd> + <kbd>K</kbd> para abrir la paleta de comandos.
 </footer>
 
 <div id="footer-button" class="no-print">
-  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-command" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#777" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-    <path d="M7 9a2 2 0 1 1 2 -2v10a2 2 0 1 1 -2 -2h10a2 2 0 1 1 -2 2v-10a2 2 0 1 1 2 2h-10" />
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon icon-tabler icon-tabler-command"
+    width="32"
+    height="32"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="#777"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path
+      d="M7 9a2 2 0 1 1 2 -2v10a2 2 0 1 1 -2 -2h10a2 2 0 1 1 -2 2v-10a2 2 0 1 1 2 2h-10"
+    ></path>
   </svg>
 </div>
 
@@ -88,20 +101,20 @@ const profilesInfo = profiles.map(({ network, url }) => {
   const footerButton = document.getElementById("footer-button")
 
   footerButton?.addEventListener("click", () => {
-    var event = new KeyboardEvent('keydown', {
-    key: 'K',
-    code: 'KeyK',
-    keyCode: 75,
-    which: 75,
-    ctrlKey: true,
-    altKey: false,
-    shiftKey: false,
-    metaKey: false
-  });
+    var event = new KeyboardEvent("keydown", {
+      key: "K",
+      code: "KeyK",
+      keyCode: 75,
+      which: 75,
+      ctrlKey: true,
+      altKey: false,
+      shiftKey: false,
+      metaKey: false,
+    })
 
-  document.dispatchEvent(event);
-  });
-  
+    document.dispatchEvent(event)
+  })
+
   if (ninja != null) {
     const info = ninja.getAttribute("data-info") ?? "[]"
     const parsedInfo = JSON.parse(info)
@@ -159,6 +172,7 @@ const profilesInfo = profiles.map(({ network, url }) => {
     #normal-footer {
       display: block;
     }
+
     #footer-button {
       display: none;
     }
@@ -170,6 +184,7 @@ const profilesInfo = profiles.map(({ network, url }) => {
     }
 
     #footer-button {
+      background: #fff;
       position: fixed;
       border: 1px solid #eee;
       right: 10px;
@@ -182,7 +197,6 @@ const profilesInfo = profiles.map(({ network, url }) => {
       justify-content: center;
       cursor: pointer;
     }
-
   }
 
   footer {

@@ -7,32 +7,30 @@ import { education } from "@cv"
 <Section title="Educación">
   <ul>
     {
-      education.map(
-        ({ institution, startDate, endDate, area }) => {
-          const startYear = new Date(startDate).getFullYear()
-          const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Actual"
-          const years = `${startYear} - ${endYear}`
+      education.map(({ institution, startDate, endDate, area }) => {
+        const startYear = new Date(startDate).getFullYear()
+        const endYear =
+          endDate != null ? new Date(endDate).getFullYear() : "Actual"
+        const years = `${startYear} - ${endYear}`
 
-          return (
-            <li>
-              <article>
-                <header>
-                  <div>
-                    <h3>{institution}</h3>
-                  </div>
+        return (
+          <li>
+            <article>
+              <header>
+                <div>
+                  <h3>{institution}</h3>
+                </div>
 
-                  <time>{years}</time>
-                </header>
+                <time>{years}</time>
+              </header>
 
-                <footer>
-                  <p>{area}</p>
-                </footer>
-              </article>
-            </li>
-          )
-        }
-      )
+              <footer>
+                <p>{area}</p>
+              </footer>
+            </article>
+          </li>
+        )
+      })
     }
   </ul>
 </Section>
@@ -62,7 +60,7 @@ import { education } from "@cv"
     min-width: 102px;
   }
 
-  @media (width <= 768px) {
+  @media (width <= 700px) {
     time {
       text-align: right;
     }

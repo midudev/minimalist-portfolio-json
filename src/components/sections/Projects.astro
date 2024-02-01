@@ -8,16 +8,17 @@ import { projects } from "@cv"
 <Section title="Proyectos">
   <ul>
     {
-      projects.map(({ url, description, highlights, name, isActive, github }) => {
-        return (
-          <li>
-            <article>
-              <header>
-                <h3>
-                  <a href={url} title={`Ver el proyecto ${name}`}>
-                    {name}
-                  </a>
-                  {isActive && <span>•</span>}
+      projects.map(
+        ({ url, description, highlights, name, isActive, github }) => {
+          return (
+            <li>
+              <article>
+                <header>
+                  <h3>
+                    <a href={url} title={`Ver el proyecto ${name}`}>
+                      {name}
+                    </a>
+                    {isActive && <span>•</span>}
                     {github && (
                       <a
                         class="github-code-link"
@@ -28,18 +29,19 @@ import { projects } from "@cv"
                         <GitHub />
                       </a>
                     )}
-                </h3>
-                <p>{description}</p>
-              </header>
-              <footer>
-                {highlights.map((highlight) => {
-                  return <span>{highlight}</span>
-                })}
-              </footer>
-            </article>
-          </li>
-        )
-      })
+                  </h3>
+                  <p>{description}</p>
+                </header>
+                <footer>
+                  {highlights.map((highlight) => {
+                    return <span>{highlight}</span>
+                  })}
+                </footer>
+              </article>
+            </li>
+          )
+        }
+      )
     }
   </ul>
 </Section>
@@ -104,12 +106,11 @@ import { projects } from "@cv"
     padding: 0.2rem 0.6rem;
   }
 
-
   .github-code-link {
     margin-left: 5px;
   }
-  
-  @media (width <= 768px) {
+
+  @media (width <= 700px) {
     ul {
       margin-inline: 0px;
     }

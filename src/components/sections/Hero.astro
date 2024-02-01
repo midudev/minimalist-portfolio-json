@@ -154,22 +154,30 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     border: 1px solid #ddd;
   }
 
-  @media (width <= 768px) {
+  @media (width <= 700px) {
     .container {
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
 
     .info {
-      order: 2;
+      justify-content: center;
+      align-items: center;
       padding-right: 0;
-    }
-
-    h2 {
-      text-wrap: pretty;
+      text-align: center;
     }
 
     figure {
-      margin: 0 auto 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h2 {
+      text-wrap: balance;
+    }
+
+    figure {
+      margin: 0 auto;
     }
   }
 </style>
