@@ -6,16 +6,16 @@ settings:
 
 dependencies:
   '@astrojs/check':
-    specifier: ^0.4.1
+    specifier: 0.4.1
     version: 0.4.1(typescript@5.3.3)
   astro:
-    specifier: ^4.2.7
-    version: 4.2.7(typescript@5.3.3)
+    specifier: 4.2.8
+    version: 4.2.8(typescript@5.3.3)
   ninja-keys:
-    specifier: ^1.2.2
+    specifier: 1.2.2
     version: 1.2.2
   typescript:
-    specifier: ^5.3.3
+    specifier: 5.3.3
     version: 5.3.3
 
 packages:
@@ -972,8 +972,8 @@ packages:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
     dev: false
 
-  /astro@4.2.7(typescript@5.3.3):
-    resolution: {integrity: sha512-m2zGL6JVwcxAV9IwwAXMHAchd8sJukW/hmskYSkIO5D4gVE9oh1SG7HA71BBxl1lJfI1j+RPAgjXQsSuGjLUjA==}
+  /astro@4.2.8(typescript@5.3.3):
+    resolution: {integrity: sha512-h78IAdSEPMo1bvR40HECQYpnMPfDnk9WxRNJ1+Hw5szk4k5IMUw3nG153nErJABRnaxb6WLv7dtS4tukzJz0mw==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -1270,6 +1270,7 @@ packages:
 
   /color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
+    requiresBuild: true
     dev: false
 
   /color-string@1.9.1:
