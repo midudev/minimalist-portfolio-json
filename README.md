@@ -1,7 +1,3 @@
-Schema del JSON de CV:
-https://jsonresume.org/schema/
+# Jose Rodolfo Rojas Porfolio
 
-Basado en el diseño de:
-https://github.com/BartoszJarocki/cv
-
-Edita el archivo `cv.json` para crear tu propio Portafolio/CV imprimible.
+Forked from https://github.com/midudev/minimalist-portfolio-json
