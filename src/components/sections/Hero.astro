@@ -153,4 +153,23 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     background: #eee;
     border: 1px solid #ddd;
   }
+
+  @media (width <= 768px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .info {
+      order: 2;
+      padding-right: 0;
+    }
+
+    h2 {
+      text-wrap: pretty;
+    }
+
+    figure {
+      margin: 0 auto 0 0;
+    }
+  }
 </style>
