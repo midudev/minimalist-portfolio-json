@@ -1,50 +1,47 @@
 ---
 import GitHub from "@/icons/GitHub.astro"
-import Section from "../Section.astro"
 
 import { projects } from "@cv"
 ---
 
-<Section title="Proyectos">
-  <ul>
-    {
-      projects.map(
-        ({ url, description, highlights, name, isActive, github }) => {
-          return (
-            <li>
-              <article>
-                <header>
-                  <h3>
-                    <a href={url} title={`Ver el proyecto ${name}`}>
-                      {name}
-                    </a>
-                    {isActive && <span>•</span>}
-                    {github && (
-                      <a
-                        class="github-code-link"
-                        href={github}
-                        target="_blank"
-                        title={`Ver código fuente del proyecto ${name}`}
-                      >
-                        <GitHub />
-                      </a>
-                    )}
-                  </h3>
-                  <p>{description}</p>
-                </header>
-                <footer>
-                  {highlights.map((highlight) => {
-                    return <span>{highlight}</span>
-                  })}
-                </footer>
-              </article>
-            </li>
-          )
-        }
-      )
-    }
-  </ul>
-</Section>
+<ul>
+  {
+    projects.map(
+      ({ url, description, highlights, name, isActive, github }) => {
+      return (
+        <li>
+          <article>
+            <header>
+              <h3>
+                <a href={url} title={`Ver el proyecto ${name}`}>
+                  {name}
+                </a>
+                {isActive && <span>•</span>}
+                {github && (
+                  <a
+                    class="github-code-link"
+                    href={github}
+                    target="_blank"
+                    title={`Ver código fuente del proyecto ${name}`}
+                  >
+                    <GitHub />
+                  </a>
+                )}
+              </h3>
+              <p>{description}</p>
+            </header>
+            <footer>
+              {highlights.map((highlight) => {
+                return <span>{highlight}</span>
+              })}
+            </footer>
+          </article>
+        </li>
+        )
+      }
+    )
+  }
+</ul>
 
 <style>
   ul {

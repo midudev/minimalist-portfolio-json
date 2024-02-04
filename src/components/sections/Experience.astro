@@ -1,46 +1,42 @@
 ---
-import Section from "../Section.astro"
-
 import { work } from "@cv"
 ---
 
-<Section title="Experiencia laboral">
-  <ul>
-    {
-      work.map(
-        ({ name, startDate, endDate, position, summary, highlights, url }) => {
-          const startYear = new Date(startDate).getFullYear()
-          const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Actual"
-          const years = `${startYear} - ${endYear}`
+<ul>
+  {
+    work.map(
+      ({ name, startDate, endDate, position, summary, highlights, url }) => {
+        const startYear = new Date(startDate).getFullYear()
+        const endYear =
+          endDate != null ? new Date(endDate).getFullYear() : "Actual"
+        const years = `${startYear} - ${endYear}`
 
-          return (
-            <li>
-              <article>
-                <header>
-                  <div>
-                    <h3>
-                      <a href={url} title={`Ver ${name}`} target="_blank">
-                        {name}
-                      </a>
-                    </h3>
-                    <h4>{position}</h4>
-                  </div>
+        return (
+          <li>
+            <article>
+              <header>
+                <div>
+                  <h3>
+                    <a href={url} title={`Ver ${name}`} target="_blank">
+                      {name}
+                    </a>
+                  </h3>
+                  <h4>{position}</h4>
+                </div>
 
-                  <time>{years}</time>
-                </header>
+                <time>{years}</time>
+              </header>
 
-                <footer>
-                  <p>{summary}</p>
-                </footer>
-              </article>
-            </li>
-          )
-        }
-      )
-    }
-  </ul>
-</Section>
+              <footer>
+                <p>{summary}</p>
+              </footer>
+            </article>
+          </li>
+        )
+      }
+    )
+  }
+</ul>
 
 <style>
   ul {
