@@ -10,38 +10,41 @@ import Projects from "@/components/sections/Projects.astro"
 import Skills from "@/components/sections/Skills.astro"
 import KeyboardManager from "@/components/KeyboardManager.astro"
 
-import { basics } from "@cv"
-const { name, label } = basics
+import { cvJson } from "@consts/consts"
+
+const langJson = cvJson.es
+
+const { name, label } = langJson.basics
 ---
 
-<Layout title={`Portafolio de ${name} - ${label}`}>
+<Layout title={`Portafolio de ${name} - ${label}`} json={langJson.basics}>
   <main>
     <Section>
-      <Hero />
+      <Hero json={langJson.basics} />
     </Section>
 
     <Section title="Sobre mí">
-      <About />
+      <About json={langJson.basics} />
     </Section>
 
     <Section title="Experiencia laboral">
-      <Experience />
+      <Experience json={langJson.work} />
     </Section>
     
     <Section title="Educación">
-      <Education />
+      <Education json={langJson.education} />
     </Section>
     
     <Section title="Proyectos">
-      <Projects />
+      <Projects json={langJson.projects} />
     </Section>
     
     <Section title="Habilidades">
-      <Skills />
+      <Skills json={langJson.skills} />
     </Section>
   </main>
 
-  <KeyboardManager />
+  <KeyboardManager json={langJson.basics} />
 </Layout>
 
 <style>
