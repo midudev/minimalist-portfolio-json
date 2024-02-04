@@ -1,0 +1,62 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import Section from "@/components/Section.astro"
+
+import About from "@/components/sections/About.astro"
+import Education from "@/components/sections/Education.astro"
+import Experience from "@/components/sections/Experience.astro"
+import Hero from "@/components/sections/Hero.astro"
+import Projects from "@/components/sections/Projects.astro"
+import Skills from "@/components/sections/Skills.astro"
+import KeyboardManager from "@/components/KeyboardManager.astro"
+
+import { cvJson } from "@consts/consts"
+
+const langJson = cvJson.en
+
+const { name, label } = cvJson.en.basics
+---
+
+<Layout title={`Portafolio de ${name} - ${label}`} json={langJson.basics}>
+  <main>
+    <Section>
+      <Hero json={langJson.basics} />
+    </Section>
+
+    <Section title="About me">
+      <About json={langJson.basics} />
+    </Section>
+
+    <Section title="Work experience">
+      <Experience json={langJson.work} />
+    </Section>
+    
+    <Section title="Education">
+      <Education json={langJson.education} />
+    </Section>
+    
+    <Section title="Projects">
+      <Projects json={langJson.projects} />
+    </Section>
+    
+    <Section title="Skills">
+      <Skills json={langJson.skills} />
+    </Section>
+  </main>
+
+  <KeyboardManager json={langJson.basics} />
+</Layout>
+
+<style>
+  main {
+    padding: 4rem;
+    margin: auto;
+    width: 100%;
+  }
+
+  @media (width <= 700px) {
+    main {
+      padding: 1rem;
+    }
+  }
+</style>
