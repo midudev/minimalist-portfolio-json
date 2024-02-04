@@ -1,10 +1,10 @@
 ---
-import { work } from "@cv"
+const { json } = Astro.props
 ---
 
 <ul>
   {
-    work.map(
+    json.map(
       ({ name, startDate, endDate, position, summary, highlights, url }) => {
         const startYear = new Date(startDate).getFullYear()
         const endYear =

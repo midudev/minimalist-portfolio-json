@@ -1,10 +1,10 @@
 ---
-import { skills } from "@cv"
+const { json } = Astro.props
 ---
 
 <ul>
   {
-    skills.map(({ name }) => (
+    json.map(({ name }) => (
       <li>
         <span>{name}</span>
       </li>

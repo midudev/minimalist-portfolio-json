@@ -1,10 +1,10 @@
 ---
-import { education } from "@cv"
+const { json } = Astro.props
 ---
 
 <ul>
   {
-    education.map(({ institution, startDate, endDate, area }) => {
+    json.map(({ institution, startDate, endDate, area }) => {
       const startYear = new Date(startDate).getFullYear();
       const endYear =
         endDate != null ? new Date(endDate).getFullYear() : "Actual";

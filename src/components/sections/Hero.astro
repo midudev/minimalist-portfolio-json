@@ -1,5 +1,4 @@
 ---
-import { basics } from "@cv"
 import Mail from "@/icons/Mail.astro"
 import Phone from "@/icons/Phone.astro"
 import X from "@/icons/X.astro"
@@ -8,7 +7,9 @@ import GitHub from "@/icons/GitHub.astro"
 import WorldMap from "@/icons/WorldMap.astro"
 import type { SocialIcon } from "@/types"
 
-const { name, label, image, location, profiles, phone, email } = basics
+const { json } = Astro.props
+
+const { name, label, image, location, profiles, phone, email } = json
 const { city, region } = location
 
 const SOCIAL_ICONS: SocialIcon = {

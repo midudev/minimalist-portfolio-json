@@ -1,12 +1,12 @@
 ---
 import GitHub from "@/icons/GitHub.astro"
 
-import { projects } from "@cv"
+const { json } = Astro.props
 ---
 
 <ul>
   {
-    projects.map(
+    json.map(
       ({ url, description, highlights, name, isActive, github }) => {
       return (
         <li>
