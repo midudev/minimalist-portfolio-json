@@ -1,7 +1,10 @@
 ---
 interface Props {
   title: string
-  json: object
+  json: {
+    image: string
+    summary: string
+  }
 }
 
 const { title, json } = Astro.props
