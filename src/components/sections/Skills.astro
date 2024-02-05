@@ -1,20 +1,20 @@
 ---
-import Section from "../Section.astro"
+interface Props {
+  json: { name: string }[]
+}
 
-import { skills } from "@cv"
+const { json } = Astro.props
 ---
 
-<Section title="Habilidades">
-  <ul>
-    {
-      skills.map(({ name }) => (
-        <li>
-          <span>{name}</span>
-        </li>
-      ))
-    }
-  </ul>
-</Section>
+<ul>
+  {
+    json.map(({ name }) => (
+      <li>
+        <span>{name}</span>
+      </li>
+    ))
+  }
+</ul>
 
 <style>
   ul {

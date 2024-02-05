@@ -1,6 +1,4 @@
 ---
-import { basics } from "@cv"
-import Section from "@/components/Section.astro"
 import Mail from "@/icons/Mail.astro"
 import Phone from "@/icons/Phone.astro"
 import X from "@/icons/X.astro"
@@ -9,7 +7,28 @@ import GitHub from "@/icons/GitHub.astro"
 import WorldMap from "@/icons/WorldMap.astro"
 import type { SocialIcon } from "@/types"
 
-const { name, label, image, location, profiles, phone, email } = basics
+interface Props {
+  json: {
+    name: string
+    label: string
+    image: string
+    location: {
+      city: string
+      region: string
+    }
+    profiles: {
+      network: string
+      url: string
+      username: string
+    }[]
+    phone: string
+    email: string
+  }
+}
+
+const { json } = Astro.props
+
+const { name, label, image, location, profiles, phone, email } = json
 const { city, region } = location
 
 const SOCIAL_ICONS: SocialIcon = {
@@ -24,66 +43,64 @@ const linkedUrl = linkedInfo?.url
 const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
 ---
 
-<Section>
-  <div class="container">
-    <div class="info">
-      <h1>{name}</h1>
-      <h2>{label}</h2>
-      <span>
-        <WorldMap />
-        {city}, {region}
-      </span>
-      <footer class="print">
-        {printInfo}
-      </footer>
-      <footer class="no-print">
-        {
-          email && (
-            <a
-              href={`mailto:${email}`}
-              title={`Enviar un correo electrónico a ${name} al correo ${email}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Mail />
-            </a>
-          )
-        }
-        {
-          phone && (
-            <a
-              href={`tel:${phone}`}
-              title={`Llamar por teléfono a ${name} al número ${phone}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Phone />
-            </a>
-          )
-        }
-        {
-          profiles.map(({ network, url, username }) => {
-            const Icon = SOCIAL_ICONS[network]
+<div class="container">
+  <div class="info">
+    <h1>{name}</h1>
+    <h2>{label}</h2>
+    <span>
+      <WorldMap />
+      {city}, {region}
+    </span>
+    <footer class="print">
+      {printInfo}
+    </footer>
+    <footer class="no-print">
+      {
+        email && (
+          <a
+            href={`mailto:${email}`}
+            title={`Enviar un correo electrónico a ${name} al correo ${email}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Mail />
+          </a>
+        )
+      }
+      {
+        phone && (
+          <a
+            href={`tel:${phone}`}
+            title={`Llamar por teléfono a ${name} al número ${phone}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Phone />
+          </a>
+        )
+      }
+      {
+        profiles.map(({ network, url, username }) => {
+          const Icon = SOCIAL_ICONS[network]
 
-            return (
-              <a
-                href={url}
-                title={`Visitar el perfil de ${name} en ${network}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon />
-              </a>
-            )
-          })
-        }
-      </footer>
-    </div>
-    <figure>
-      <img src={image} alt={name} />
-    </figure>
+          return (
+            <a
+              href={url}
+              title={`Visitar el perfil de ${name} en ${network}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon />
+            </a>
+          )
+        })
+      }
+    </footer>
   </div>
-</Section>
+  <figure>
+    <img src={image} alt={name} />
+  </figure>
+</div>
 
 <style>
   .container {

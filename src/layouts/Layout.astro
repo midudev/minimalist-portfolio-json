@@ -1,13 +1,15 @@
 ---
-import { basics } from "@cv"
-
 interface Props {
   title: string
+  json: {
+    image: string
+    summary: string
+  }
 }
 
-const { title } = Astro.props
+const { title, json } = Astro.props
 
-const { image, summary } = basics
+const { image, summary } = json
 ---
 
 <!doctype html>

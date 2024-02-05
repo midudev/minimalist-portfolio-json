@@ -12,9 +12,9 @@ import KeyboardManager from "@/components/KeyboardManager.astro"
 
 import { cvJson } from "@consts/consts"
 
-const langJson = cvJson.es
+const langJson = cvJson.en
 
-const { name, label } = langJson.basics
+const { name, label } = cvJson.en.basics
 ---
 
 <Layout title={`Portafolio de ${name} - ${label}`} json={langJson.basics}>
@@ -23,23 +23,23 @@ const { name, label } = langJson.basics
       <Hero json={langJson.basics} />
     </Section>
 
-    <Section title="Sobre mí">
+    <Section title="About me">
       <About json={langJson.basics} />
     </Section>
 
-    <Section title="Experiencia laboral">
+    <Section title="Work experience">
       <Experience json={langJson.work} />
     </Section>
     
-    <Section title="Educación">
+    <Section title="Education">
       <Education json={langJson.education} />
     </Section>
     
-    <Section title="Proyectos">
+    <Section title="Projects">
       <Projects json={langJson.projects} />
     </Section>
     
-    <Section title="Habilidades">
+    <Section title="Skills">
       <Skills json={langJson.skills} />
     </Section>
   </main>
