@@ -7,6 +7,25 @@ import GitHub from "@/icons/GitHub.astro"
 import WorldMap from "@/icons/WorldMap.astro"
 import type { SocialIcon } from "@/types"
 
+interface Props {
+  json: {
+    name: string
+    label: string
+    image: string
+    location: {
+      city: string
+      region: string
+    }
+    profiles: {
+      network: string
+      url: string
+      username: string
+    }[]
+    phone: string
+    email: string
+  }
+}
+
 const { json } = Astro.props
 
 const { name, label, image, location, profiles, phone, email } = json

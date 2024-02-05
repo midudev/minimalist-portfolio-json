@@ -5,7 +5,15 @@ const { json } = Astro.props
 <ul>
   {
     json.map(
-      ({ name, startDate, endDate, position, summary, highlights, url }) => {
+      ({ name, startDate, endDate, position, summary, highlights, url }: { 
+        name: string; 
+        startDate: string; 
+        endDate: string | null; 
+        position: string; 
+        summary: string; 
+        highlights: string[]; 
+        url: string 
+      }) => {
         const startYear = new Date(startDate).getFullYear()
         const endYear =
           endDate != null ? new Date(endDate).getFullYear() : "Actual"

@@ -7,7 +7,7 @@ const { json } = Astro.props
 <ul>
   {
     json.map(
-      ({ url, description, highlights, name, isActive, github }) => {
+      ({ url, description, highlights, name, isActive, github }: { url: string, description: string, highlights: string[], name: string, isActive: boolean, github: string }) => {
       return (
         <li>
           <article>

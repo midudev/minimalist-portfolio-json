@@ -1,4 +1,13 @@
 ---
+interface Props {
+  json: {
+    institution: string;
+    startDate: string;
+    endDate: string;
+    area: string;
+  }[];
+}
+
 const { json } = Astro.props
 ---
 
