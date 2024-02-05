@@ -1,17 +1,17 @@
 ---
-import Section from "../Section.astro";
-import HTML from "@/icons/html.astro";
-import CSS from "@/icons/css.astro";
-import JavaScript from "@/icons/javascript.astro";
-import TypeScript from "@/icons/type.astro";
-import React from "@/icons/react.astro";
-import Node from "@/icons/node.astro";
-import MySQL from "@/icons/sql.astro";
-import Git from "@/icons/git.astro";
-import GitHub from "@/icons/GitHub.astro";
-import Tailwind from "@/icons/tailwind.astro";
-import Next from "@/icons/next.astro";
-import { skills } from "@cv";
+import Section from "../Section.astro"
+import HTML from "@/icons/html.astro"
+import CSS from "@/icons/css.astro"
+import JavaScript from "@/icons/javascript.astro"
+import TypeScript from "@/icons/type.astro"
+import React from "@/icons/react.astro"
+import Node from "@/icons/node.astro"
+import MySQL from "@/icons/sql.astro"
+import Git from "@/icons/git.astro"
+import GitHub from "@/icons/GitHub.astro"
+import Tailwind from "@/icons/tailwind.astro"
+import Next from "@/icons/next.astro"
+import { skills } from "@cv"
 
 const SKILLS_ICONS: Record<string, any> = {
   HTML,
@@ -25,21 +25,21 @@ const SKILLS_ICONS: Record<string, any> = {
   GitHub,
   Next,
   Tailwind,
-};
+}
 ---
 
 <Section title="Habilidades">
   <ul>
     {
-      skills.map(({ name }, index) => {
-        const iconName = name === "Next.js" ? "Next" : name;
-        const Icon = SKILLS_ICONS[iconName];
+      skills.map(({ name }) => {
+        const iconName = name === "Next.js" ? "Next" : name
+        const Icon = SKILLS_ICONS[iconName]
 
         return (
           <li>
             {Icon && <Icon />} <span>{name}</span>
           </li>
-        );
+        )
       })
     }
   </ul>
@@ -53,11 +53,14 @@ const SKILLS_ICONS: Record<string, any> = {
   }
 
   li {
-    border-radius: 6px;
+    align-items: center;
     background: #eee;
+    border-radius: 6px;
     color: black;
+    display: flex;
     font-size: 0.8rem;
     font-weight: 500;
+    gap: 4px;
     padding: 0.2rem 0.6rem;
   }
 </style>
