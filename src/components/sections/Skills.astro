@@ -5,14 +5,17 @@ import { skills } from "@cv"
 
 <Section title="Habilidades">
   <ul>
-    {
-      skills.map(({ name }) => {
-        return (
-          <li>
-            <span>{name}</span>
-          </li>
-        )
-      })
+     {
+      skills
+        .slice()
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map(({ name }) => {
+          return (
+            <li>
+              <span>{name}</span>
+            </li>
+          )
+        })
     }
   </ul>
 </Section>
@@ -29,10 +32,8 @@ import { skills } from "@cv"
     background: #eee;
     border-radius: 6px;
     color: black;
-    display: flex;
     font-size: 0.8rem;
     font-weight: 500;
-    gap: 4px;
     padding: 0.2rem 0.6rem;
   }
 </style>
