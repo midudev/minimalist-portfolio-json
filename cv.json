@@ -1,275 +1,310 @@
 {
   "basics": {
-    "name": "Miguel Ángel Durán",
-    "label": "Full Stack Developer con más de 15 años de experiencia & Creador de Contenido de Programación",
+    "name": "Cristhian Fernando Melo",
+    "label": "Front-end Developer con más de 2 años de experiencia",
     "image": "/me.webp",
-    "email": "miduga@gmail.com",
-    "phone": "+34 688888888",
-    "url": "https://midu.dev",
-    "summary": "+15 años de experiencia como Desarrollador Web. Actualmente soy Creador de Contenido y Divulgador sobre Programación. Vivo en Barcelona, España. He trabajado en diferentes entornos: desde acelerar el desarrollo de start-ups hasta liderando equipos de empresas multinacionales.",
+    "email": "contact@rxtsel.dev",
+    "phone": "+57 3142216604",
+    "url": "https://rxtsel.dev",
+    "summary": "+2 años de experiencia como Desarrollador Web. Actualmente soy Front-end Developer. Vivo en Colombia. He trabajado en diferentes entornos: desde acelerar el desarrollo de start-ups hasta liderando equipos en empresas.",
     "location": {
       "address": "",
-      "postalCode": "08820",
-      "city": "el Prat de Llobregat",
-      "countryCode": "ES",
-      "region": "España"
+      "postalCode": "520001",
+      "city": "Pasto",
+      "countryCode": "CO",
+      "region": "Colombia"
     },
     "profiles": [
       {
         "network": "LinkedIn",
-        "username": "midudev",
-        "url": "https://linkedin.com/in/midudev"
+        "username": "rxtsel",
+        "url": "https://www.linkedin.com/in/rxtsel/"
       },
       {
         "network": "X",
-        "username": "midudev",
-        "url": "https://x.com/midudev"
+        "username": "rxtsel",
+        "url": "https://x.com/rxtsel"
       },
       {
         "network": "GitHub",
-        "username": "midudev",
-        "url": "https://github.com/midudev"
+        "username": "rxtsel",
+        "url": "https://github.com/rxtsel"
       }
     ]
   },
   "work": [
     {
-      "name": "midudev",
-      "position": "Divulgador sobre Programación Web",
-      "url": "https://twitch.tv/midudev",
-      "startDate": "2021-01-01",
+      "name": "Visual Dealers",
+      "position": "Front-End Developer, Los Angeles, California",
+      "url": "https://visualdealers.com/",
+      "startDate": "2023-04-01",
       "endDate": null,
-      "summary": "Streamer de programación más visto en Español en Twitch. +1 millón de seguidores entre todas mis redes sociales. Reconocido por Google, Microsoft y GitHub por mi impacto en la comunidad de desarrolladores.",
-      "highlights": [
-        "Started the company"
-      ]
+      "summary": "Desarrollador de E-commerce, plantillas de email marketing, SEO y landing pages. Mejora del 70% en Core Web Vitals. Apasionado por la creación de experiencias web excepcionales y orientadas al rendimiento.",
+      "highlights": ["Started the company"]
     },
     {
-      "name": "Adevinta",
-      "position": "Lead Frontend Architect",
-      "url": "https://twitch.tv/midudev",
-      "startDate": "2016-06-01",
-      "endDate": "2022-09-01",
-      "summary": "Lideré una convergencia técnica entre diferentes productos y migramos una arquitectura monolítica a otra más flexible y optimizada. Fomenté buenas prácticas y mejoras en la cultura de rendimiento, además de la entrega rápida de valor a los usuarios.",
-      "highlights": [
-        "Started the company"
-      ]
-    },
-    {
-      "name": "Hubii",
-      "position": "Senior FrontEnd Developer",
-      "startDate": "2011-03-01",
-      "endDate": "2016-05-01",
-      "summary": "Desarrollé una plataforma de noticias geolocalizadas y una API para consumir la información. Escalé los servicios para soportar la carga de más de cientos de miles de peticiones al día. Recorté los tiempos de entrega y despliegues a producción a la mitad. Colaboré con Mozilla y Telefónica para desarrollar la primera app para televisores con FirefoxOS.",
-      "highlights": [
-        "Started the company"
-      ]
+      "name": "Vehement",
+      "position": "Front-End Developer",
+      "url": "https://vehement.co/",
+      "startDate": "2022-09-01",
+      "endDate": "2024-02-01",
+      "summary": "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 90% en la entrega de software. Implantación de medidas de integración continua y despliegue.",
+      "highlights": ["Started the company"]
     }
   ],
-  "volunteer": [{
-    "organization": "Organization",
-    "position": "Volunteer",
-    "url": "https://organization.com/",
-    "startDate": "2012-01-01",
-    "endDate": "2013-01-01",
-    "summary": "Description…",
-    "highlights": [
-      "Awarded 'Volunteer of the Month'"
-    ]
-  }],
-  "education": [{
-    "institution": "Universitat Oberta de Catalunya",
-    "url": "https://www.uoc.edu/portal/es/index.html",
-    "area": "Ingeniero de Software",
-    "studyType": "Bachelor",
-    "startDate": "2003-01-01",
-    "endDate": "2009-01-01",
-    "score": "4.0",
-    "courses": [
-      "DB1101 - Basic SQL"
-    ]
-  }],
-  "awards": [{
-    "title": "Award",
-    "date": "2014-11-01",
-    "awarder": "Company",
-    "summary": "There is no spoon."
-  }],
-  "certificates": [{
-    "name": "Certificate",
-    "date": "2021-11-07",
-    "issuer": "Company",
-    "url": "https://certificate.com"
-  }],
-  "publications": [{
-    "name": "Publication",
-    "publisher": "Company",
-    "releaseDate": "2014-10-01",
-    "url": "https://publication.com",
-    "summary": "Description…"
-  }],
+  "volunteer": [
+    {
+      "organization": "Organization",
+      "position": "Volunteer",
+      "url": "https://organization.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description…",
+      "highlights": ["Awarded 'Volunteer of the Month'"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Institución Universitaria Politécnico Grancolombiano",
+      "url": "https://campusvirtual.poligran.edu.co/",
+      "area": "Ingeniero de Software",
+      "studyType": "Bachelor",
+      "startDate": "2023-04-01",
+      "endDate": null,
+      "score": "4.0",
+      "courses": ["DB1101 - Basic SQL"]
+    },
+    {
+      "institution": "Universidad del Norte",
+      "url": "https://www.uninorte.edu.co/",
+      "area": "Desarrollo de Software",
+      "studyType": "Bachelor",
+      "startDate": "2022-04-01",
+      "endDate": "2022-12-01",
+      "score": "4.0",
+      "courses": ["DB1101 - Basic SQL"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "url": "https://publication.com",
+      "summary": "Description…"
+    }
+  ],
   "skills": [
     {
       "name": "HTML",
       "level": "Master",
-      "keywords": [
-        "Desarrollo Web", "Frontend"
-      ]
+      "keywords": ["Desarrollo Web", "Frontend"]
     },
     {
       "name": "CSS",
       "level": "Master",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "Diseño Responsive"
-      ]
+      "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"]
     },
     {
       "name": "JavaScript",
       "level": "Master",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "Backend", "Fullstack"
-      ]
-    },
-    {
-      "name": "Tailwind",
-      "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "CSS Framework", "Diseño Responsive"
-      ]
+      "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"]
     },
     {
       "name": "TypeScript",
       "level": "Avanzado",
       "keywords": [
-        "Desarrollo Web", "Frontend", "Backend", "JavaScript Superset"
+        "Desarrollo Web",
+        "Frontend",
+        "Backend",
+        "JavaScript Superset"
       ]
     },
     {
       "name": "Node",
       "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Backend", "JavaScript", "Servidor"
-      ]
+      "keywords": ["Desarrollo Web", "Backend", "JavaScript", "Servidor"]
     },
     {
       "name": "MySQL",
       "level": "Avanzado",
       "keywords": [
-        "Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
       ]
     },
     {
       "name": "Git",
       "level": "Avanzado",
-      "keywords": [
-        "Control de Versiones", "Colaboración", "Código Fuente"
-      ]
+      "keywords": ["Control de Versiones", "Colaboración", "Código Fuente"]
     },
     {
       "name": "GitHub",
       "level": "Avanzado",
       "keywords": [
-        "Control de Versiones", "Colaboración", "Código Fuente", "Git"
+        "Control de Versiones",
+        "Colaboración",
+        "Código Fuente",
+        "Git"
       ]
     },
     {
       "name": "Next.js",
       "level": "Avanzado",
       "keywords": [
-        "Desarrollo Web", "Frontend", "React Framework", "SSR", "Static Generation"
+        "Desarrollo Web",
+        "Frontend",
+        "React Framework",
+        "SSR",
+        "Static Generation"
       ]
     },
     {
       "name": "React",
       "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Astro",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Tailwind",
+      "level": "Avanzado",
       "keywords": [
-        "Desarrollo Web", "Frontend", "JavaScript Library", "UI"
+        "Desarrollo Web",
+        "Frontend",
+        "CSS Framework",
+        "Diseño Responsive"
       ]
+    },
+    {
+      "name": "CI/CD",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "CSS Preprocessor"]
+    },
+    {
+      "name": "Linux",
+      "level": "Intermedio",
+      "keywords": ["Sistema Operativo", "Servidor", "Desarrollo Web"]
+    },
+    {
+      "name": "Lua",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo de Videojuegos", "Backend", "Servidor"]
+    },
+    {
+      "name": "Node.js",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Backend", "JavaScript", "Servidor"]
+    },
+    {
+      "name": "MongoDB",
+      "level": "Intermedio",
+      "keywords": [
+        "Bases de Datos",
+        "NoSQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name": "PostgreSQL",
+      "level": "Intermedio",
+      "keywords": [
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name": "S3",
+      "level": "Intermedio",
+      "keywords": ["Almacenamiento de Datos", "Backend", "AWS"]
+    },
+    {
+      "name": "WPO",
+      "level": "Intermedio",
+      "keywords": ["Web Performance Optimization", "Frontend", "Backend"]
     }
   ],
   "languages": [
     {
-      "language": "Spanish",
-      "fluency": "Native speaker"
+      "language": "Español",
+      "fluency": "Nativo"
     },
     {
-      "language": "English",
-      "fluency": "Advanced"
+      "language": "Inglés",
+      "fluency": "B1 Intermedio"
     }
   ],
-  "interests": [{
-    "name": "Wildlife",
-    "keywords": [
-      "Ferrets",
-      "Unicorns"
-    ]
-  }],
-  "references": [{
-    "name": "Jane Doe",
-    "reference": "Reference…"
-  }],
+  "interests": [
+    {
+      "name": "Wildlife",
+      "keywords": ["Ferrets", "Unicorns"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Jane Doe",
+      "reference": "Reference…"
+    }
+  ],
   "projects": [
     {
-      "name": "mars.codes",
+      "name": "Qantto.io",
       "isActive": true,
-      "description": "Historia interactiva con retos de programación para viajar a Marte",
-      "highlights": [
-        "Elige tu propia aventura",
-        "En desarrollo"
-      ],
-      "url": "https://mars.codes"
+      "description": "Qantto es la primera plataforma de Quoting-Automation para negocios o empresas. Aumenta las tasas de conversión automatizando el proceso de ventas.",
+      "highlights": ["Multidioma"],
+      "url": "https://qantto.io"
     },
     {
-      "name": "AdventJS",
+      "name": "Qantto Dashboard",
       "isActive": true,
-      "description": "Retos de programación en JavaScript para cada día de diciembre hasta Navidad",
-      "highlights": [
-        "+1 millón de visitas",
-        "Multidioma",
-        "JavaScript & TypeScript"
-      ],
-      "url": "https://adventjs.dev"
+      "description": "Panel de control para gestionar los servicios de Qantto.io.",
+      "highlights": ["+3.000 clientes", "Multidioma"],
+      "url": "https://app.qantto.io"
     },
     {
-      "name": "Codember",
+      "name": "Corrector Ortográfico",
       "isActive": true,
-      "description": "Juego interactivo de programación con retos y secretos",
-      "highlights": [
-        "+2000 usuarios activos",
-        "Retos para cualquier lenguaje"
-      ],
-      "url": "https://codember.dev"
+      "description": "Usa Inteligencia Artificial para corregir textos en Español",
+      "highlights": ["+1k visitas al mes"],
+      "url": "https://spell-check-ai.vercel.app/"
     },
     {
-      "name": "codi.link",
+      "name": "Isarte",
       "isActive": true,
-      "description": "Playground de código HTML, CSS y JavaScript para compartir",
-      "highlights": [
-        "100k visitas al mes",
-        "Desarrollado por la comunidad"
-      ],
-      "url": "https://codi.link",
-      "github": "https://github.com/midudev/codi.link"
+      "description": "Portafolio web para Isabel Renfijo, famosa artista Colombiana. Descubre su trayectoria, obras, exposiciones y premios.",
+      "highlights": ["Portafolio", "E-commerce"],
+      "url": "https://isabelrengifo.art/"
     },
     {
-      "name": "Pruebas Técnicas",
+      "name": "Agencia Vehement",
       "isActive": true,
-      "description": "Lista de pruebas técnicas de empresas para practicar programación",
-      "highlights": [
-        "100% gratuito",
-        "+500 soluciones de la comunidad"
-      ],
-      "url": "https://pruebastecnicas.com",
-      "github": "https://github.com/midudev/pruebas-tecnicas"
-    },
-    {
-      "name": "miduConf",
-      "description": "Conferencia de programación en streaming para la comunidad hispanohablante con charlas top",
-      "highlights": [
-        "+15k tickets repartidos",
-        "+50k espectadores en directo"
-      ],
-      "url": "https://miduconf.com"
+      "description": "Diseño y desarrollo de la agencia Vehement.",
+      "highlights": ["Multidioma"],
+      "url": "https://vehement.co/"
     }
   ]
 }
