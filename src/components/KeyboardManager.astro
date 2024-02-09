@@ -95,9 +95,14 @@ const profilesInfo = profiles.map(({ network, url }) => {
     url: string
     icon: string
     hotkey: string
+    handler?: () => void;
   }
 
-  const ninja = document.querySelector("ninja-keys")
+  interface NinjaKeysElement extends HTMLElement {
+    data: Info[]
+  }
+
+  const ninja = document.querySelector<NinjaKeysElement>("ninja-keys")!
   const footerButton = document.getElementById("footer-button")
 
   footerButton?.addEventListener("click", () => {
