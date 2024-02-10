@@ -24,5 +24,6 @@ pnpm-debug.log*
 .history
 
 .pnpm-debug.log
+firebase-debug.log
 .firebase/
 .github/

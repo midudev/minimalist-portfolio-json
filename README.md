@@ -74,7 +74,6 @@ sudo npm install -g npm@latest
 
 brew install pnpm
 brew install corepack
-corepack enable pnpm
 
 ❯ node -v
 v21.6.1
@@ -84,6 +83,11 @@ v21.6.1
 yarn info yarn description
 
 pnpm update
+```
+
+```bash
+corepack enable pnpm
+corepack prepare pnpm@latest --activate
 pnpm install
 ```
 
