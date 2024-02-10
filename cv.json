@@ -1,18 +1,18 @@
 {
   "basics": {
-    "name": "Miguel Ángel Durán",
-    "label": "Full Stack Developer con más de 15 años de experiencia & Creador de Contenido de Programación",
+    "name": "Himanshu Jain",
+    "label": "Full-Stack developer with more than 15 years of experience & development content creator",
     "image": "/me.webp",
     "email": "miduga@gmail.com",
     "phone": "+34 688888888",
     "url": "https://midu.dev",
-    "summary": "+15 años de experiencia como Desarrollador Web. Actualmente soy Creador de Contenido y Divulgador sobre Programación. Vivo en Barcelona, España. He trabajado en diferentes entornos: desde acelerar el desarrollo de start-ups hasta liderando equipos de empresas multinacionales.",
+    "summary": "+15 years of experience as a web developer. Currently I am a content creator and development dommunicator. I live in Barcelona, Spain. I have worked in different environments: from accelerating the development of start-ups to leading teams in multinational companies.",
     "location": {
       "address": "",
       "postalCode": "08820",
       "city": "el Prat de Llobregat",
       "countryCode": "ES",
-      "region": "España"
+      "region": "Spain"
     },
     "profiles": [
       {
@@ -35,11 +35,11 @@
   "work": [
     {
       "name": "midudev",
-      "position": "Divulgador sobre Programación Web",
+      "position": "Web programming communicator",
       "url": "https://twitch.tv/midudev",
       "startDate": "2021-01-01",
       "endDate": null,
-      "summary": "Streamer de programación más visto en Español en Twitch. +1 millón de seguidores entre todas mis redes sociales. Reconocido por Google, Microsoft y GitHub por mi impacto en la comunidad de desarrolladores.",
+      "summary": "Most watched development streamer in Spanish on Twitch. +1 million followers across all my social networks. Recognised by Google, Microsoft and GitHub for my impact on the development community.",
       "highlights": [
         "Started the company"
       ]
@@ -50,7 +50,7 @@
       "url": "https://twitch.tv/midudev",
       "startDate": "2016-06-01",
       "endDate": "2022-09-01",
-      "summary": "Lideré una convergencia técnica entre diferentes productos y migramos una arquitectura monolítica a otra más flexible y optimizada. Fomenté buenas prácticas y mejoras en la cultura de rendimiento, además de la entrega rápida de valor a los usuarios.",
+      "summary": "I led a technical convergence between different products and migrated from a monolithic architecture to a more flexible and optimised one. I fostered best practices and performance culture improvements, as well as rapid delivery of value to users.",
       "highlights": [
         "Started the company"
       ]
@@ -60,7 +60,7 @@
       "position": "Senior FrontEnd Developer",
       "startDate": "2011-03-01",
       "endDate": "2016-05-01",
-      "summary": "Desarrollé una plataforma de noticias geolocalizadas y una API para consumir la información. Escalé los servicios para soportar la carga de más de cientos de miles de peticiones al día. Recorté los tiempos de entrega y despliegues a producción a la mitad. Colaboré con Mozilla y Telefónica para desarrollar la primera app para televisores con FirefoxOS.",
+      "summary": "I developed a geolocated news platform and an API to consume the information. Scaled services to support the load of over hundreds of thousands of requests per day. Cut delivery times and deployments to production by half. Collaborated with Mozilla and Telefónica to develop the first FirefoxOS TV app.",
       "highlights": [
         "Started the company"
       ]
@@ -80,7 +80,7 @@
   "education": [{
     "institution": "Universitat Oberta de Catalunya",
     "url": "https://www.uoc.edu/portal/es/index.html",
-    "area": "Ingeniero de Software",
+    "area": "Software Engineer",
     "studyType": "Bachelor",
     "startDate": "2003-01-01",
     "endDate": "2009-01-01",
@@ -113,77 +113,77 @@
       "name": "HTML",
       "level": "Master",
       "keywords": [
-        "Desarrollo Web", "Frontend"
+        "Web development", "Frontend"
       ]
     },
     {
       "name": "CSS",
       "level": "Master",
       "keywords": [
-        "Desarrollo Web", "Frontend", "Diseño Responsive"
+        "Web development", "Frontend", "Diseño Responsive"
       ]
     },
     {
       "name": "JavaScript",
       "level": "Master",
       "keywords": [
-        "Desarrollo Web", "Frontend", "Backend", "Fullstack"
+        "Web development", "Frontend", "Backend", "Fullstack"
       ]
     },
     {
       "name": "Tailwind",
-      "level": "Avanzado",
+      "level": "Advanced",
       "keywords": [
-        "Desarrollo Web", "Frontend", "CSS Framework", "Diseño Responsive"
+        "Web development", "Frontend", "CSS Framework", "Diseño Responsive"
       ]
     },
     {
       "name": "TypeScript",
-      "level": "Avanzado",
+      "level": "Advanced",
       "keywords": [
-        "Desarrollo Web", "Frontend", "Backend", "JavaScript Superset"
+        "Web development", "Frontend", "Backend", "JavaScript Superset"
       ]
     },
     {
       "name": "Node",
-      "level": "Avanzado",
+      "level": "Advanced",
       "keywords": [
-        "Desarrollo Web", "Backend", "JavaScript", "Servidor"
+        "Web development", "Backend", "JavaScript", "Servidor"
       ]
     },
     {
       "name": "MySQL",
-      "level": "Avanzado",
+      "level": "Advanced",
       "keywords": [
-        "Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"
+        "Bases de Datos", "SQL", "Database", "Backend"
       ]
     },
     {
       "name": "Git",
-      "level": "Avanzado",
+      "level": "Advanced",
       "keywords": [
-        "Control de Versiones", "Colaboración", "Código Fuente"
+        "Version control", "Colaboración", "Source code"
       ]
     },
     {
       "name": "GitHub",
-      "level": "Avanzado",
+      "level": "Advanced",
       "keywords": [
-        "Control de Versiones", "Colaboración", "Código Fuente", "Git"
+        "Version control", "Collaboration", "Source code", "Git"
       ]
     },
     {
       "name": "Next.js",
-      "level": "Avanzado",
+      "level": "Advanced",
       "keywords": [
-        "Desarrollo Web", "Frontend", "React Framework", "SSR", "Static Generation"
+        "Web development", "Frontend", "React Framework", "SSR", "Static Generation"
       ]
     },
     {
       "name": "React",
-      "level": "Avanzado",
+      "level": "Advanced",
       "keywords": [
-        "Desarrollo Web", "Frontend", "JavaScript Library", "UI"
+        "Web development", "Frontend", "JavaScript Library", "UI"
       ]
     }
   ],
@@ -212,41 +212,41 @@
     {
       "name": "mars.codes",
       "isActive": true,
-      "description": "Historia interactiva con retos de programación para viajar a Marte",
+      "description": "Interactive story with programming challenges to travel to Mars",
       "highlights": [
-        "Elige tu propia aventura",
-        "En desarrollo"
+        "Choose your own adventure",
+        "In progress"
       ],
       "url": "https://mars.codes"
     },
     {
       "name": "AdventJS",
       "isActive": true,
-      "description": "Retos de programación en JavaScript para cada día de diciembre hasta Navidad",
+      "description": "JavaScript programming challenges for every day of December until Christmas",
       "highlights": [
-        "+1 millón de visitas",
-        "Multidioma",
+        "+1 million visits",
+        "Multilanguage",
         "JavaScript & TypeScript"
       ],
-      "url": "https://adventjs.dev"
+      "url": "https://advent.js/dev"
     },
     {
       "name": "Codember",
       "isActive": true,
-      "description": "Juego interactivo de programación con retos y secretos",
+      "description": "Interactive programming game with challenges and secrets",
       "highlights": [
-        "+2000 usuarios activos",
-        "Retos para cualquier lenguaje"
+        "+2000 active users",
+        "Challenges for any language"
       ],
       "url": "https://codember.dev"
     },
     {
       "name": "codi.link",
       "isActive": true,
-      "description": "Playground de código HTML, CSS y JavaScript para compartir",
+      "description": "Playground of HTML, CSS and JavaScript code for sharing",
       "highlights": [
-        "100k visitas al mes",
-        "Desarrollado por la comunidad"
+        "100k monthly visit",
+        "Developed by the community"
       ],
       "url": "https://codi.link",
       "github": "https://github.com/midudev/codi.link"
@@ -254,20 +254,20 @@
     {
       "name": "Pruebas Técnicas",
       "isActive": true,
-      "description": "Lista de pruebas técnicas de empresas para practicar programación",
+      "description": "List of technical tests of companies to practice programming",
       "highlights": [
-        "100% gratuito",
-        "+500 soluciones de la comunidad"
+        "100% free",
+        "+500 community solutions"
       ],
       "url": "https://pruebastecnicas.com",
       "github": "https://github.com/midudev/pruebas-tecnicas"
     },
     {
       "name": "miduConf",
-      "description": "Conferencia de programación en streaming para la comunidad hispanohablante con charlas top",
+      "description": "Streaming programming conference for the Spanish-speaking community with top talks",
       "highlights": [
-        "+15k tickets repartidos",
-        "+50k espectadores en directo"
+        "+15k tickets handed over",
+        "+50k live viewers"
       ],
       "url": "https://miduconf.com"
     }

@@ -10,8 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "0.4.1",
-    "astro": "4.3.2",
+    "@astrojs/check": "0.5.2",
+    "astro": "4.3.5",
+    "firebase-tools": "^13.2.1",
     "ninja-keys": "1.2.2",
     "typescript": "5.3.3"
   }

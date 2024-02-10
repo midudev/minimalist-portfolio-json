@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # local folders
 .history
+
+.pnpm-debug.log
+.firebase/
+.github/
