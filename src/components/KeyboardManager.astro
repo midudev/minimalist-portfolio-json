@@ -1,4 +1,6 @@
 ---
+import 'hotkeypad/reset.css'
+import 'hotkeypad/index.css'
 import { type SocialIcon } from "@/types"
 import { basics } from "@cv"
 
@@ -38,7 +40,7 @@ const SOCIAL_ICONS: SocialIcon = {
     d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
   ></path></svg
 >
-`,
+`
 }
 
 const profilesInfo = profiles.map(({ network, url }) => {
@@ -51,7 +53,7 @@ const profilesInfo = profiles.map(({ network, url }) => {
     title: `Visitar ${network}`,
     url,
     icon,
-    hotkey: `ctrl+${firstLetter}`,
+    hotkey: `ctrl+${firstLetter}`
   }
 })
 ---
@@ -80,14 +82,14 @@ const profilesInfo = profiles.map(({ network, url }) => {
   </svg>
 </div>
 
-<ninja-keys
+<div
+  id="hotkeypad"
+  data-placeholder="Buscar comando"
   data-info={JSON.stringify(profilesInfo)}
-  placeholder="Buscar comando"
-  hideBreadcrumbs></ninja-keys>
+>
+</div>
 
 <script>
-  import "ninja-keys"
-
   interface Info {
     id: string
     section: string
@@ -95,16 +97,46 @@ const profilesInfo = profiles.map(({ network, url }) => {
     url: string
     icon: string
     hotkey: string
-    handler?: () => void;
+    handler?: () => void
   }
 
-  interface NinjaKeysElement extends HTMLElement {
-    data: Info[]
-  }
+  import HotKeyPad from "hotkeypad"
 
-  const ninja = document.querySelector<NinjaKeysElement>("ninja-keys")!
+  const hotkeypad = new HotKeyPad()
+  const info = hotkeypad.instance.getAttribute("data-info") ?? "[]"
+  const parsedInfo = JSON.parse(info) as Info[]
+
+  const data = parsedInfo.map(
+    ({ url, hotkey, icon, id, section, title }) => {
+      return {
+        id,
+        title,
+        icon,
+        hotkey,
+        section,
+        handler: () => {
+          window.open(url, "_blank")
+        }
+      }
+    }
+  )
+  hotkeypad.setCommands([
+    {
+      id: "print",
+      title: "Imprimir",
+      icon: `<svg style="margin-right: 8px" width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0 .229 2.523a1.125 1.125 0 0 1-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0 0 21 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 0 0-1.913-.247M6.34 18H5.25A2.25 2.25 0 0 1 3 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 0 1 1.913-.247m10.5 0a48.536 48.536 0 0 0-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18 10.5h.008v.008H18V10.5Zm-3 0h.008v.008H15V10.5Z" />
+</svg>`,
+      hotkey: "ctrl+P",
+      section: "Acciones",
+      handler: () => {
+        window.print()
+      }
+    },
+    ...data
+  ])
+
   const footerButton = document.getElementById("footer-button")
-
   footerButton?.addEventListener("click", () => {
     var event = new KeyboardEvent("keydown", {
       key: "K",
@@ -114,56 +146,14 @@ const profilesInfo = profiles.map(({ network, url }) => {
       ctrlKey: true,
       altKey: false,
       shiftKey: false,
-      metaKey: false,
+      metaKey: false
     })
 
     document.dispatchEvent(event)
   })
-
-  if (ninja != null) {
-    const info = ninja.getAttribute("data-info") ?? "[]"
-    const parsedInfo = JSON.parse(info)
-
-    const data = parsedInfo.map(
-      ({ url, hotkey, icon, id, section, title }: Info) => {
-        return {
-          id,
-          title,
-          icon,
-          hotkey,
-          section,
-          handler: () => {
-            window.open(url, "_blank")
-          },
-        }
-      }
-    )
-
-    ninja.data = [
-      {
-        id: "print",
-        title: "Imprimir",
-        icon: `<svg style="margin-right: 8px" width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0 .229 2.523a1.125 1.125 0 0 1-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0 0 21 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 0 0-1.913-.247M6.34 18H5.25A2.25 2.25 0 0 1 3 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 0 1 1.913-.247m10.5 0a48.536 48.536 0 0 0-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18 10.5h.008v.008H18V10.5Zm-3 0h.008v.008H15V10.5Z" />
-</svg>`,
-        hotkey: "ctrl+P",
-        section: "Acciones",
-        handler: () => {
-          window.print()
-        },
-      },
-      ...data,
-    ]
-  }
 </script>
 
 <style>
-  @media print {
-    ninja-keys {
-      display: none !important;
-    }
-  }
-
   @keyframes fadeIn {
     from {
       opacity: 0;
