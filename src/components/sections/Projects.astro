@@ -88,6 +88,10 @@ import { projects } from "@cv"
 
   article h3 span {
     color: rgb(0, 188, 47);
+    animation-name: flicker;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
   }
 
   footer {
@@ -110,6 +114,18 @@ import { projects } from "@cv"
     margin-left: 5px;
   }
 
+  @keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.25;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   @media (width <= 700px) {
     ul {
       margin-inline: 0px;
@@ -119,6 +135,12 @@ import { projects } from "@cv"
       border: none;
       box-shadow: 0 1px 1px #f2f2f2;
       padding: 0 0 16px 0;
+    }
+  }
+  
+  @media print {
+    article h3 span {
+      color: rgb(0, 188, 47);
     }
   }
 </style>
