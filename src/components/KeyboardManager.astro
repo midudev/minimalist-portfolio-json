@@ -151,6 +151,9 @@ const profilesInfo = profiles.map(({ network, url }) => {
 
     document.dispatchEvent(event)
   })
+
+  const footer = document.getElementById("normal-footer")
+  footer?.addEventListener('click', ()=>hotkeypad.open())
 </script>
 
 <style>
@@ -213,6 +216,11 @@ const profilesInfo = profiles.map(({ network, url }) => {
     animation-range: entry 100% cover 10%;
 
     user-select: none;
+  }
+
+  footer:hover {
+    background: #f5f5f5;
+    cursor: pointer;
   }
 
   kbd {
