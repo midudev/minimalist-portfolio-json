@@ -1,17 +1,25 @@
 ---
-import { basics } from "@cv"
+import KeyboardManager from '@/components/KeyboardManager.astro'
+import LanguagePicker from '@/components/LanguagePicker.astro'
+import type { CV } from '@/cv'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
 interface Props {
   title: string
+  cv: CV
 }
 
-const { title } = Astro.props
+const { title, cv } = Astro.props
 
+const { basics } = cv
 const { image, summary, url } = basics
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>
@@ -34,7 +42,9 @@ const { image, summary, url } = basics
     <meta name="twitter:image" content="" />
   </head>
   <body>
+    <LanguagePicker />
     <slot />
+    <KeyboardManager />
   </body>
 </html>
 
