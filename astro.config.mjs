@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import { languages, defaultLang } from './src/i18n/utils';
 
 // https://astro.build/config
 export default defineConfig({
