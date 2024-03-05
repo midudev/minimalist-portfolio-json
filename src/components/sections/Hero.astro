@@ -1,5 +1,7 @@
 ---
-import { basics } from "@cv"
+interface Props {
+  cv: CV
+}
 import Section from "@/components/Section.astro"
 import Mail from "@/icons/Mail.astro"
 import Phone from "@/icons/Phone.astro"
@@ -8,7 +10,11 @@ import LinkedIn from "@/icons/LinkedIn.astro"
 import GitHub from "@/icons/GitHub.astro"
 import WorldMap from "@/icons/WorldMap.astro"
 import type { SocialIcon } from "@/types"
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
+import type { CV } from "@/cv"
 
+const { cv } = Astro.props
+const { basics } = cv
 const { name, label, image, location, profiles, phone, email } = basics
 const { city, region } = location
 
@@ -22,28 +28,33 @@ const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
 const linkedUrl = linkedInfo?.url
 
 const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <Section>
-  <div class="container">
-    <div class="info">
+  <div class='container'>
+    <div class='info'>
       <h1>{name}</h1>
       <h2>{label}</h2>
       <span>
         <WorldMap />
         {city}, {region}
       </span>
-      <footer class="print">
+      <footer class='print'>
         {printInfo}
       </footer>
-      <footer class="no-print">
+      <footer class='no-print'>
         {
           email && (
             <a
               href={`mailto:${email}`}
-              title={`Enviar un correo electrónico a ${name} al correo ${email}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              title={t("hero.a.email.title")
+                .replace("{name}", name)
+                .replace("{email}", email)}
+              target='_blank'
+              rel='noopener noreferrer'
             >
               <Mail />
             </a>
@@ -53,9 +64,11 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
           phone && (
             <a
               href={`tel:${phone}`}
-              title={`Llamar por teléfono a ${name} al número ${phone}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              title={t("hero.a.phone.title")
+                .replace("{name}", name)
+                .replace("{phone}", phone)}
+              target='_blank'
+              rel='noopener noreferrer'
             >
               <Phone />
             </a>
@@ -68,9 +81,11 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
             return (
               <a
                 href={url}
-                title={`Visitar el perfil de ${name} en ${network}`}
-                target="_blank"
-                rel="noopener noreferrer"
+                title={t("hero.a.social.title")
+                  .replace("{name}", name)
+                  .replace("{network}", network)}
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 <Icon />
               </a>
