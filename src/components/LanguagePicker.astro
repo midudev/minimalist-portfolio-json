@@ -1,0 +1,70 @@
+---
+import { getLangFromUrl, languages, useTranslations } from "@/i18n/utils"
+import { getAbsoluteLocaleUrl } from "astro:i18n"
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<section>
+  <nav>
+    <ul>
+      {
+        Object.entries(languages).map(([l]) => {
+          const url = getAbsoluteLocaleUrl(l)
+          if (lang === l) {
+            return <li class='active'>{l.toUpperCase()}</li>
+          }
+
+          return (
+            <a href={url} title={t("languagepicker.a.title")}>
+              <li>{l.toUpperCase()}</li>
+            </a>
+          )
+        })
+      }
+    </ul>
+  </nav>
+</section>
+
+<style>
+  section {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+    padding: 0.5em;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+  }
+
+  ul {
+    display: flex;
+    gap: 0.5em;
+  }
+
+  li {
+    color: #777;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    padding: 4px;
+    height: 32px;
+    width: 32px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+
+  li:hover {
+    background: #ddd;
+    border: 1px solid #ddd;
+  }
+
+  li.active {
+    font-weight: 600;
+    color: #333;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    cursor: default;
+  }
+</style>
