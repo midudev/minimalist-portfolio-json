@@ -1,4 +1,8 @@
 ---
+interface Props {
+  cv: CV
+}
+
 import Section from "../Section.astro"
 import HTML from "@/icons/html.astro"
 import CSS from "@/icons/css.astro"
@@ -11,12 +15,15 @@ import Git from "@/icons/git.astro"
 import GitHub from "@/icons/GitHub.astro"
 import Tailwind from "@/icons/tailwind.astro"
 import Next from "@/icons/next.astro"
-import { skills } from "@cv"
 import Swift from "@/icons/swift.astro"
 import SwiftUI from "@/icons/swiftui.astro"
 import Kotlin from "@/icons/kotlin.astro"
 import Flutter from "@/icons/flutter.astro"
+import type { CV } from "@/cv"
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 
+const { cv } = Astro.props
+const { skills } = cv
 const SKILLS_ICONS: Record<string, any> = {
   HTML,
   CSS,
@@ -34,9 +41,12 @@ const SKILLS_ICONS: Record<string, any> = {
   Kotlin,
   Flutter,
 }
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
-<Section title="Habilidades">
+<Section title={t("skills.title")}>
   <ul>
     {
       skills.map(({ name }) => {

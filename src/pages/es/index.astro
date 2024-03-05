@@ -1,0 +1,11 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import AllSections from "@/components/AllSections.astro"
+
+import cv from "@cv"
+const { name, label } = cv.basics
+---
+
+<Layout title={`Portafolio de ${name} - ${label}`} cv={cv}>
+  <AllSections cv={cv} />
+</Layout>

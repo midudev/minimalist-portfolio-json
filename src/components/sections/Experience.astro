@@ -1,17 +1,27 @@
 ---
+interface Props {
+  cv: CV
+}
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import Section from "../Section.astro"
+import type { CV } from "@/cv"
 
-import { work } from "@cv"
+const { cv } = Astro.props
+const { work } = cv
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
-<Section title="Experiencia laboral">
+<Section title={t("experience.title")}>
   <ul>
     {
       work.map(
         ({ name, startDate, endDate, position, summary, highlights, url }) => {
           const startYear = new Date(startDate).getFullYear()
           const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Actual"
+            endDate != null
+              ? new Date(endDate).getFullYear()
+              : t("experience.current")
           const years = `${startYear} - ${endYear}`
 
           return (
@@ -20,7 +30,7 @@ import { work } from "@cv"
                 <header>
                   <div>
                     <h3>
-                      <a href={url} title={`Ver ${name}`} target="_blank">
+                      <a href={url} title={`Ver ${name}`} target='_blank'>
                         {name}
                       </a>
                     </h3>
