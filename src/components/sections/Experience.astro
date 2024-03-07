@@ -1,18 +1,34 @@
 ---
-import Section from "../Section.astro"
+import { basics } from '@cv';
 
-import { work } from "@cv"
+import WorldMap from '@/icons/WorldMap.astro';
+import Section from '../Section.astro';
+
+import { work } from '@cv';
+
+const { location } = basics;
+
+const { city, region } = location;
 ---
 
-<Section title="Experiencia laboral">
+<Section title='Work experience'>
   <ul>
     {
       work.map(
-        ({ name, startDate, endDate, position, summary, highlights, url }) => {
-          const startYear = new Date(startDate).getFullYear()
+        ({
+          name,
+          startDate,
+          endDate,
+          position,
+          summary,
+          location,
+          highlights,
+          url,
+        }) => {
+          const startYear = new Date(startDate).getFullYear();
           const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Actual"
-          const years = `${startYear} - ${endYear}`
+            endDate != null ? new Date(endDate).getFullYear() : 'Actual';
+          const years = `${startYear} - ${endYear}`;
 
           return (
             <li>
@@ -20,7 +36,7 @@ import { work } from "@cv"
                 <header>
                   <div>
                     <h3>
-                      <a href={url} title={`Ver ${name}`} target="_blank">
+                      <a href={url} title={`Ver ${name}`} target='_blank'>
                         {name}
                       </a>
                     </h3>
@@ -29,13 +45,17 @@ import { work } from "@cv"
 
                   <time>{years}</time>
                 </header>
+                <span class='spanMe'>
+                  <WorldMap />
+                  {location.city}, {location.region}
+                </span>
 
                 <footer>
                   <p>{summary}</p>
                 </footer>
               </article>
             </li>
-          )
+          );
         }
       )
     }
@@ -78,6 +98,10 @@ import { work } from "@cv"
     color: #555;
     font-size: 0.85rem;
     min-width: 102px;
+  }
+  span {
+    border: blue 3px solid;
+    background-color: red;
   }
 
   @media (width <= 700px) {
