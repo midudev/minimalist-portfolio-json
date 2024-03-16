@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Mauricio Istúriz",
-    "label": "Desarrollador Full Stack con más de 5 años de experiencia.",
+    "label": "Desarrollador Full Stack con 2 años de experiencia.",
     "image": "me.webp",
     "email": "isturizmauricio@gmail.com",
     "phone": "+58 4121511816",
@@ -34,7 +34,7 @@
       "url": "https://boomsolutionsve.com/",
       "startDate": "2023-12-04",
       "endDate": null,
-      "summary": "Facilito la comunicación entre el back-end y el front-end de diversas aplicaciones, lidero la implementación de tecnologías como Astro.build y React.js, administro las bases de datos de la empresa, evalúo y corrijo fallos de ciberseguridad en codificación y servidores, y apoyo a otros departamentos mediante la generación de informes para asegurar el correcto funcionamiento de sus operaciones y procesos de toma de decisiones.",
+      "summary": "Facilitar la comunicación entre el back-end y el front-end de diversas aplicaciones, liderar la implementación de tecnologías como Astro.build y React.js, administrar las bases de datos de la empresa, evaluar y corregir fallos de ciberseguridad en codificación y servidores, y apoyar a otros departamentos mediante la generación de informes para asegurar el correcto funcionamiento de sus operaciones y procesos de toma de decisiones.",
       "highlights": ["Started the company"]
     },
     {
@@ -43,7 +43,7 @@
       "url": "https://damex.io/",
       "startDate": "2023-12-04",
       "endDate": "2023-08-01",
-      "summary": "Optimizo la estructura del proyecto y aplico las mejores prácticas, además de refactorizar el código para incrementar la escalabilidad de la aplicación.",
+      "summary": "Optimizar la estructura del proyecto y aplicar las mejores prácticas, además de refactorizar el código para incrementar la escalabilidad de la aplicación.",
       "highlights": ["Started the company"]
     }
   ],
