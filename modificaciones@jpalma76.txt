@@ -1,0 +1,4 @@
+basic-Summary: Se cambia la palabra "liderando" por "liderar" en CV.json
+work-midudev-summary: Se cambia el punto('.') por la la frase "con más de" 
+work-Adevinta-summary: Se cambia la frase "y migramos" por ", migrando"
+Work-Hubii-summary: Se cambia la palabra "recorté" por "Acorté"
