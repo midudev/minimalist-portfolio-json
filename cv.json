@@ -76,25 +76,32 @@
     "institution": "Escuela de Educación Técnica N° 5",
     "url": "https://eest5mdp.edu.ar/",
     "area": "Técnico Personal y Profesional en Informática",
-    "studyType": "Bachelor",
+    "studyType": "Bachiller en Economía y Gestion",
     "startDate": "1997-01-01",
     "endDate": "2003-01-01",
     "score": "4.0",
     "courses": [
       "DB1101 - Basic SQL"
-    ]
-  }],
+    ]}
+  ],
   "awards": [{
     "title": "Award",
     "date": "2014-11-01",
     "awarder": "Company",
     "summary": "There is no spoon."
   }],
-  "certificates": [{
-    "name": "Certificate",
-    "date": "2021-11-07",
-    "issuer": "Company",
-    "url": "https://certificate.com"
+  "certificates": [
+  {
+    "name": "Testing QA Manual",
+    "date": "2003-12-01",
+    "issuer": "Coder House",
+    "url": "https://api-gw.coderhouse.com/www/certifications/657365a1ad4e2d77e12eccb9/download?lang=es"
+  },
+  {
+    "name": "Master: Selenium con Python Test Qa Automation",
+    "date": "2024-04-03",
+    "issuer": "Udemy",
+    "url": "https://www.udemy.com/certificate/UC-edf463d5-a08b-4ec9-824f-ffbe63c552e4/"
   }],
   "publications": [{
     "name": "Publication",
