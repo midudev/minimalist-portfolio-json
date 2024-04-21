@@ -1,0 +1,38 @@
+---
+import { Routes } from "@/routes/routes";
+---
+
+<nav class="navbar">
+  <div class="menu">
+    {Routes.map((route) => <a href={route.path} class="menu-button">{route.name}</a>)}
+  </div>
+</nav>
+
+<style>
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    position: fixed; // Add position: fixed to make the menu floating
+  }
+
+  .menu-button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>

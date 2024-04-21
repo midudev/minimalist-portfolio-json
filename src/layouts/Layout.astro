@@ -1,13 +1,14 @@
 ---
-import { basics } from "@cv"
+import Menu from "@/components/Menu.astro";
+import { basics } from "@cv";
 
 interface Props {
-  title: string
+  title: string;
 }
 
-const { title } = Astro.props
+const { title } = Astro.props;
 
-const { image, summary, url } = basics
+const { image, summary, url } = basics;
 ---
 
 <!doctype html>
@@ -27,13 +28,15 @@ const { image, summary, url } = basics
     <meta property="og:image" content="" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content={url.split("//")[1] ?? ''} />
+    <meta property="twitter:domain" content={url.split("//")[1] ?? ""} />
     <meta property="twitter:url" content={url} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={summary} />
     <meta name="twitter:image" content="" />
   </head>
+    
   <body>
+    <Menu />
     <slot />
   </body>
 </html>
@@ -49,6 +52,16 @@ const { image, summary, url } = basics
       monospace;
     background: #fff;
     letter-spacing: -0.025rem;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  ::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
+  /* Optional: show position indicator in red */
+  ::-webkit-scrollbar-thumb {
+    background: #ff0000;
   }
 
   body,
