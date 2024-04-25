@@ -1,17 +1,16 @@
 {
   "basics": {
     "name": "Carlos B. Borruel",
-    "label": "Certified full-stack web developer. Great communicator with a passion for learning, international background job experience in multicultural teams.",
+    "label": "Certified full-stack web developer. Great communicator with a passion for learning, with international background job experience in multicultural teams.",
     "image": "/Carlos_B&W_yo.webp",
     "email": "cborrueldev@gmail.com",
-    "phone": "+34 688888888",
     "url": "https:/404.dev",
-    "summary": "Two years of experience as a frontend developer at diconium digital solutions. Certified by Digital Career Institute. Very good knowledge of HTML, CSS, JavaScript, MERN Stack, and TypeScript. Experienced in frontend and backend development, with a focus on usability, scalable APIs and clean code. Great communicator with a passion for learning, Agile methodologies, UX and working in teams. Mandarin Chinese, English, Spanish and German language ",
+    "summary": " Certified full-stack web developer based in Berlin. Two years of experience as a frontend developer at diconium digital solutions. Certified by Digital Career Institute. Very good knowledge of HTML, CSS, JavaScript, MERN Stack, and TypeScript. Experienced in frontend and backend development, with a focus on usability, scalable APIs and clean code. Great communicator with a passion for learning, Agile methodologies, UX and working in teams. International background job experience in multicultural teams and previous professional experience in the audiovisual field. Fluent in Mandarin Chinese, English, Spanish and conversational on German language. Currently seeking new opportunities and challenges",
     "location": {
       "address": "",
       "postalCode": "10247",
-      "city": "Beijing",
-      "region": "China"
+      "city": "Berlin",
+      "region": "Germany"
     },
     "profiles": [
       {
@@ -40,19 +39,8 @@
       "summary": "Front-end development in modern JavaScript, TypeScript, HTML5, CSS3, and CSS preprocessors (SASS).",
       "highlights": ["Marketplace"],
       "location": {
-        "city": "Roma",
-        "region": "Italy"
-      }
-    },
-    {
-      "name": "SYKES",
-      "position": "Customer support",
-      "startDate": "2021-11-01",
-      "endDate": "2022-11-01",
-      "summary": "Salesforce use for customer service support.",
-      "location": {
-        "city": "Madrid",
-        "region": "Spain"
+        "city": "Berlin",
+        "region": "Germany"
       }
     }
   ],
@@ -95,10 +83,9 @@
       "endDate": "2005-07-22",
       "location": {
         "address": "",
-        "postalCode": "10247",
-        "city": "Berlin",
-        "countryCode": "DEU",
-        "region": "Germany"
+        "city": "Madrid",
+        "countryCode": "ES",
+        "region": "Spain"
       }
     }
   ],
@@ -208,6 +195,11 @@
       "name": "React",
       "level": "Avanzado",
       "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Premiere",
+      "level": "Avanzado",
+      "keywords": ["Video editing", "Video", "Adobe Suite"]
     }
   ],
   "languages": [
@@ -234,51 +226,50 @@
   ],
   "projects": [
     {
-      "name": "mars.codes",
-      "isActive": true,
-      "description": "Historia interactiva con retos de programación para viajar a Marte",
-      "highlights": ["Elige tu propia aventura", "En desarrollo"],
-      "url": "https://mars.codes"
+      "name": "Arkanoid JS",
+      "isActive": false,
+      "description": "A vainilla Javascript mockup from the classic 80´s game ",
+      "highlights": ["Game", "Javascript"],
+      "url": "https://github.com/Charlibb/Arkanoid-JS",
+      "github": "https://github.com/Charlibb/Arkanoid-JS"
     },
     {
-      "name": "AdventJS",
+      "name": "ChatBot-GPT",
       "isActive": true,
-      "description": "Retos de programación en JavaScript para cada día de diciembre hasta Navidad",
-      "highlights": [
-        "+1 millón de visitas",
-        "Multidioma",
-        "JavaScript & TypeScript"
-      ],
-      "url": "https://adventjs.dev"
+      "description": "Full-stack chatbot application built in React, TypeScript, Vite, and Node.js.",
+      "highlights": ["OpenAI", "ChatBot", "API", "ReactJS", "Typescript"],
+      "url": "https://github.com/Charlibb/chatbot-project",
+      "github": "https://github.com/Charlibb/chatbot-project"
     },
     {
-      "name": "Codember",
+      "name": "MonkeyType",
       "isActive": true,
-      "description": "Juego interactivo de programación con retos y secretos",
-      "highlights": ["+2000 usuarios activos", "Retos para cualquier lenguaje"],
-      "url": "https://codember.dev"
+      "description": "100% pure vainilla Javascript project based on the popular Monkeytype game",
+      "highlights": ["Javascript", "Game"],
+      "url": "https://github.com/Charlibb/monkeyType",
+      "github": "https://github.com/Charlibb/monkeyType"
     },
     {
-      "name": "codi.link",
+      "name": "JS30",
       "isActive": true,
-      "description": "Playground de código HTML, CSS y JavaScript para compartir",
-      "highlights": ["100k visitas al mes", "Desarrollado por la comunidad"],
-      "url": "https://codi.link",
-      "github": "https://github.com/midudev/codi.link"
+      "description": "30 small javascript proyects",
+      "highlights": ["Javascript", "HTML", "CSS"],
+      "url": "https://github.com/Charlibb/Js30",
+      "github": "https://github.com/Charlibb/Js30"
     },
     {
-      "name": "Pruebas Técnicas",
+      "name": "Rick & Morty Character Generator",
       "isActive": true,
-      "description": "Lista de pruebas técnicas de empresas para practicar programación",
-      "highlights": ["100% gratuito", "+500 soluciones de la comunidad"],
-      "url": "https://pruebastecnicas.com",
-      "github": "https://github.com/midudev/pruebas-tecnicas"
+      "description": "An application built with HTML, Bootstrap 5 and JavaScript where I fetch characters from an API and display them by the click of a button.",
+      "highlights": ["Bootstrap", "Javascript"],
+      "url": "https://github.com/Charlibb/-rick-and-morty-character-generator",
+      "github": "https://github.com/Charlibb/-rick-and-morty-character-generator"
     },
     {
-      "name": "miduConf",
-      "description": "Conferencia de programación en streaming para la comunidad hispanohablante con charlas top",
-      "highlights": ["+15k tickets repartidos", "+50k espectadores en directo"],
-      "url": "https://miduconf.com"
+      "name": "Minimalist json portfolio",
+      "description": "Minimalist cv site, built in Astro",
+      "highlights": ["Tailwind", "Astro", "Typescript"],
+      "url": "https://github.com/Charlibb/minimalist-portfolio-json"
     }
   ]
 }
