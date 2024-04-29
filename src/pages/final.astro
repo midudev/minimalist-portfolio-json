@@ -1,9 +1,38 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+
+import About from "@/components/sections/About.astro";
+import Education from "@/components/sections/Education.astro";
+import Experience from "@/components/sections/Experience.astro";
+import Hero from "@/components/sections/Hero.astro";
+import Projects from "@/components/sections/Projects.astro";
+import Skills from "@/components/sections/Skills.astro";
+import KeyboardManager from "@/components/KeyboardManager.astro";
 ---
 
-<Layout title="diseño final">
-    <div>
-        Esta es la pagina final
-    </div>
+<Layout title={`Portafolio final`}>
+  <main>
+    <Hero client:visible readOnly={true}/>
+    <About />
+    <Experience />
+    <Education />
+    <Projects />
+    <Skills />
+  </main>
+
+  <KeyboardManager />
 </Layout>
+
+<style>
+  main {
+    padding: 4rem;
+    margin: auto;
+    width: 100%;
+  }
+
+  @media (width <= 700px) {
+    main {
+      padding: 2rem;
+    }
+  }
+</style>

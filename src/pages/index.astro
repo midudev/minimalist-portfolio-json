@@ -7,23 +7,17 @@ import Experience from "@/components/sections/Experience.astro";
 import Hero from "@/components/sections/Hero.astro";
 import Projects from "@/components/sections/Projects.astro";
 import Skills from "@/components/sections/Skills.astro";
-import KeyboardManager from "@/components/KeyboardManager.astro";
-
-import { basics } from "@cv";
-const { name, label } = basics;
 ---
 
-<Layout title={`Portafolio guia ${name} - ${label}`}>
+<Layout title={`Portafolio guia`}>
   <main>
-    <Hero />
-    <About />
+    <Hero readOnly={false}/>
+    <About readOnly={false}/>
     <Experience />
     <Education />
     <Projects />
     <Skills />
   </main>
-
-  <KeyboardManager />
 </Layout>
 
 <style>
