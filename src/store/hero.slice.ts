@@ -34,7 +34,9 @@ export interface Profile {
 export interface Actions {
   setBasic: (prop: string, value: unknown) => void;
   setLocation: (prop: string, value: unknown) => void;
-  addProfile: (profile: Profile) => void;
+  editProfile: (editedProfile: Profile, index: number) => void;
+  addProfile: (newProfile: Profile) => void;
+  deleteProfile: (index: number) => void;
 }
 
 export type HeroSlice = HeroState & Actions;
@@ -73,6 +75,20 @@ export const createHeroState: StateCreator<HeroSlice> = (set) => ({
       ...state,
       location: { ...state.location, [prop]: value },
     })),
-  addProfile: (profile) =>
-    set((state) => ({ profiles: [...state.profiles, profile] })),
+  addProfile: (newProfile) =>
+    set((state) => ({ profiles: [...state.profiles, newProfile] })),
+  editProfile: (editedProfile, index) =>
+    set((state) => {
+      const profiles = state.profiles.map((profile, i) =>
+        i === index ? editedProfile : profile
+      );
+
+      return { profiles };
+    }),
+  deleteProfile: (index) =>
+    set((state) => {
+      const profiles = state.profiles.filter((_, i) => i !== index);
+
+      return { profiles };
+    }),
 });
