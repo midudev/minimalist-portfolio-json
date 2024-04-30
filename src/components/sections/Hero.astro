@@ -1,22 +1,11 @@
 ---
 import { basics } from "@cv";
 import Section from "@/components/Section.astro";
-import Mail from "@/icons/Mail.astro";
-import Phone from "@/icons/Phone.astro";
-import X from "@/icons/X.astro";
-import LinkedIn from "@/icons/LinkedIn.astro";
-import GitHub from "@/icons/GitHub.astro";
 import Info from "@/components/sections/hero/Info";
-import type { SocialIcon } from "@/types";
 import Footer from "@/components/sections/hero/Footer";
+import Avatar from "@/components/sections/hero/Avatar";
 
-const { name, image, profiles, phone, email } = basics;
-
-const SOCIAL_ICONS: SocialIcon = {
-  GitHub,
-  LinkedIn,
-  X,
-};
+const { profiles, phone, email } = basics;
 
 const linkedInfo = profiles.find(({ network }) => network === "LinkedIn");
 const linkedUrl = linkedInfo?.url;
@@ -39,9 +28,7 @@ const { readOnly } = Astro.props as HeroProps;
       </footer>
       <Footer client:load readOnly={readOnly} />
     </div>
-    <figure>
-      <img src={image} alt={name} />
-    </figure>
+    <Avatar client:load readOnly={readOnly}/>
   </div>
 </Section>
 
