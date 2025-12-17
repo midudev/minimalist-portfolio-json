@@ -1,0 +1,67 @@
+---
+import {references } from "@cv";
+import Section from "../Section.astro";
+import Copy from "../../icons/Copy.astro";
+---
+
+<Section title="Referencias">
+  <ul>
+    {references.map((ref) => (
+      <li>
+        <h3>{ref.name}</h3>
+        <h4> {ref.position}</h4>
+        <p>{ref.company}</p>
+        <p > {ref.phone}</p>
+        <p class="copy"><Copy/> <span class=copytext>{ref.email}</span></p>
+      </li>
+    ))}
+  </ul>
+</Section>
+
+<style>
+    ul {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 18rem));
+    }
+    li {
+        margin-bottom: 1rem;
+    }
+    h3 {
+        margin-bottom: 0.25rem;
+    }
+
+    h4 {
+        font-size: 0.9rem;
+    }
+
+    p {
+        margin: 0;
+      font-size: 0.9rem;
+    }
+
+</style>
+
+<script>
+  /*para dar clic y copiar al portapapeles*/
+    document.querySelectorAll('.copy').forEach((p) => {
+        p.addEventListener('click', () => {
+          //copiar el contenido del span
+          let text = p.querySelector('.copytext')?.textContent;
+
+          if (!text) {
+            text = '';
+          }
+
+        if(text !== null ){
+        navigator.clipboard.writeText(text);
+        alert(`Copiado al portapapeles: ${text}`);
+        }else{
+          console.log('error al copiar');
+        }
+        });
+    });
+
+</script>

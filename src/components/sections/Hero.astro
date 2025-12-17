@@ -3,7 +3,6 @@ import { basics } from "@cv"
 import Section from "@/components/Section.astro"
 import Mail from "@/icons/Mail.astro"
 import Phone from "@/icons/Phone.astro"
-import X from "@/icons/X.astro"
 import LinkedIn from "@/icons/LinkedIn.astro"
 import GitHub from "@/icons/GitHub.astro"
 import WorldMap from "@/icons/WorldMap.astro"
@@ -15,7 +14,6 @@ const { city, region } = location
 const SOCIAL_ICONS: SocialIcon = {
   GitHub,
   LinkedIn,
-  X,
 }
 
 const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
