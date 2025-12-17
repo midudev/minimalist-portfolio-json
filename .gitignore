@@ -22,3 +22,5 @@ pnpm-debug.log*
 
 # local folders
 .history
+
+.idea
