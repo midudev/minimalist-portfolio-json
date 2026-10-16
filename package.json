@@ -10,9 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "0.4.1",
-    "astro": "4.3.2",
-    "hotkeypad": "0.1.0",
-    "typescript": "5.3.3"
+    "astro": "7.4.0",
+    "hotkeypad": "1.0.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "typescript": "6.0.3"
   }
 }
