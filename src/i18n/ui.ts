@@ -2,6 +2,8 @@ export const ui = {
   es: {
     "meta.title": "Portafolio de {name} - {label}",
     "lang.label": "Idioma",
+    "theme.label": "Modo oscuro",
+    "theme.toggle": "Cambiar entre modo claro y oscuro",
     "lang.switch": "Ver en {language}",
     "hero.email": "Enviar un correo electrónico a {name} al correo {email}",
     "hero.phone": "Llamar por teléfono a {name} al número {phone}",
@@ -31,6 +33,8 @@ export const ui = {
   en: {
     "meta.title": "{name}'s Portfolio - {label}",
     "lang.label": "Language",
+    "theme.label": "Dark mode",
+    "theme.toggle": "Switch between light and dark mode",
     "lang.switch": "View in {language}",
     "hero.email": "Send an email to {name} at {email}",
     "hero.phone": "Call {name} at {phone}",

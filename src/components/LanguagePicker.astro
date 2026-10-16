@@ -26,9 +26,6 @@ const langs = Object.entries(LANGUAGES) as [Lang, { name: string }][]
 
 <style>
   nav {
-    position: absolute;
-    top: 1.75rem;
-    right: 1.5rem;
     display: flex;
     gap: 0.25rem;
     font-size: 0.8125rem;
@@ -49,12 +46,5 @@ const langs = Object.entries(LANGUAGES) as [Lang, { name: string }][]
   a[aria-current] {
     color: var(--color-ink);
     background: var(--color-wash);
-  }
-
-  @media screen and (width <= 720px) {
-    nav {
-      top: 1.25rem;
-      right: 1.25rem;
-    }
   }
 </style>

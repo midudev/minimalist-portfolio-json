@@ -9,6 +9,7 @@ import Projects from "@/components/sections/Projects.astro"
 import Skills from "@/components/sections/Skills.astro"
 import KeyboardManager from "@/components/KeyboardManager.astro"
 import LanguagePicker from "@/components/LanguagePicker.astro"
+import ThemeToggle from "@/components/ThemeToggle.astro"
 
 import {
   DEFAULT_LANG,
@@ -32,7 +33,10 @@ const t = useTranslations(lang)
 
 <Layout title={t("meta.title", { name, label })} lang={lang}>
   <main>
-    <LanguagePicker lang={lang} />
+    <div class="toolbar no-print">
+      <LanguagePicker lang={lang} />
+      <ThemeToggle lang={lang} />
+    </div>
     <Hero lang={lang} />
     <About lang={lang} />
     <Experience lang={lang} />
@@ -55,10 +59,24 @@ const t = useTranslations(lang)
     padding: 6rem 1.5rem 8rem;
   }
 
+  .toolbar {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   @media screen and (width <= 720px) {
     main {
       gap: 2.75rem;
       padding: 4.5rem 1.25rem 7rem;
+    }
+
+    .toolbar {
+      top: 1.125rem;
+      right: 1.25rem;
     }
   }
 

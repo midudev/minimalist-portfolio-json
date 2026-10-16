@@ -55,6 +55,7 @@ Basado en el diseño de <a href="https://github.com/BartoszJarocki/cv">Bartosz J
 - [**Astro**](https://astro.build/) - El framework web de la nueva época.
 - [**Typescript**](https://www.typescriptlang.org/) - JavaScript con sintaxis de tipado.
 - [**HotKeyPad**](https://github.com/jesubohr/hotkeypad) - Paleta de comandos con atajos de teclado hecha en puro JavaScript.
+- [**Mona Sans**](https://github.com/github/mona-sans) - Tipografía variable, servida en local y recortada (`src/assets/fonts`).
 
 
 ## 🚀 Empezar

@@ -1,5 +1,6 @@
 ---
-import { Font } from "astro:assets"
+import "@/styles/fonts.css"
+import fontLatin from "@/assets/fonts/portfolio-sans-latin.woff2?url"
 import { LANGUAGES, getCV, getLangPath, type Lang } from "@/i18n"
 
 interface Props {
@@ -17,13 +18,27 @@ const alternates = Object.keys(LANGUAGES) as Lang[]
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
+    <script is:inline>
+      try {
+        const theme = localStorage.getItem("theme")
+        if (theme === "light" || theme === "dark") {
+          document.documentElement.dataset.theme = theme
+        }
+      } catch {}
+    </script>
     <title>{title}</title>
     <meta name="description" content={summary} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="preload"
+      href={fontLatin}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="preload" as="image" href={image} />
-    <Font cssVariable="--font-sans" preload />
     {
       alternates.length > 1 &&
         alternates.map((alternate) => (
@@ -55,14 +70,17 @@ const alternates = Object.keys(LANGUAGES) as Lang[]
 
 <style is:global>
   :root {
-    --color-paper: #ffffff;
-    --color-ink: #15171c;
-    --color-text: #3d414a;
-    --color-muted: #6b707a;
-    --color-rule: #e5e7eb;
-    --color-wash: #f2f3f5;
-    --color-accent: #2448c9;
-    --color-live: #1a9a4b;
+    --font-sans: "Portfolio Sans", "Portfolio Sans Fallback", system-ui,
+      sans-serif;
+
+    --color-paper: light-dark(#ffffff, #121418);
+    --color-ink: light-dark(#15171c, #f2f3f5);
+    --color-text: light-dark(#3d414a, #c3c7ce);
+    --color-muted: light-dark(#6b707a, #8d929b);
+    --color-rule: light-dark(#e5e7eb, #262a31);
+    --color-wash: light-dark(#f2f3f5, #1d2026);
+    --color-accent: light-dark(#2448c9, #8ea9ff);
+    --color-live: light-dark(#1a9a4b, #3ecf75);
 
     --label-col: 9.5rem;
     --gutter: 2.5rem;
@@ -71,16 +89,13 @@ const alternates = Object.keys(LANGUAGES) as Lang[]
     color-scheme: light dark;
   }
 
-  @media screen and (prefers-color-scheme: dark) {
-    :root {
-      --color-paper: #121418;
-      --color-ink: #f2f3f5;
-      --color-text: #c3c7ce;
-      --color-muted: #8d929b;
-      --color-rule: #262a31;
-      --color-wash: #1d2026;
-      --color-accent: #8ea9ff;
-      --color-live: #3ecf75;
+  @media screen {
+    :root[data-theme="light"] {
+      color-scheme: light;
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
     }
   }
 
@@ -199,6 +214,7 @@ const alternates = Object.keys(LANGUAGES) as Lang[]
 
   @media print {
     :root {
+      color-scheme: light;
       --label-col: 9rem;
       --gutter: 1.5rem;
     }
