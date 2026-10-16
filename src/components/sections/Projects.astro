@@ -2,10 +2,14 @@
 import GitHub from "@/icons/GitHub.astro"
 import Section from "../Section.astro"
 
-import { projects } from "@cv"
+import { getCV, useTranslations, type Lang } from "@/i18n"
+
+const { lang } = Astro.props as { lang: Lang }
+const { projects } = getCV(lang)
+const t = useTranslations(lang)
 ---
 
-<Section title="Proyectos">
+<Section title={t("projects.title")}>
   <ul>
     {
       projects.map(
@@ -15,7 +19,7 @@ import { projects } from "@cv"
               <article>
                 <header>
                   <h3>
-                    <a href={url} target="_blank" title={`Ver el proyecto ${name}`}>
+                    <a href={url} target="_blank" title={t("projects.link", { name })}>
                       {name}
                     </a>
                     {isActive && <span>•</span>}
@@ -24,7 +28,7 @@ import { projects } from "@cv"
                         class="github-code-link"
                         href={github}
                         target="_blank"
-                        title={`Ver código fuente del proyecto ${name}`}
+                        title={t("projects.source", { name })}
                       >
                         <GitHub />
                       </a>

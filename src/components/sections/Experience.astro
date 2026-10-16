@@ -1,17 +1,21 @@
 ---
 import Section from "../Section.astro"
 
-import { work } from "@cv"
+import { getCV, useTranslations, type Lang } from "@/i18n"
+
+const { lang } = Astro.props as { lang: Lang }
+const { work } = getCV(lang)
+const t = useTranslations(lang)
 ---
 
-<Section title="Experiencia laboral">
+<Section title={t("experience.title")}>
   <ul>
     {
       work.map(
         ({ name, startDate, endDate, position, summary, highlights, url }) => {
           const startYear = new Date(startDate).getFullYear()
           const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Actual"
+            endDate != null ? new Date(endDate).getFullYear() : t("date.present")
 
           return (
             <li>
@@ -19,7 +23,7 @@ import { work } from "@cv"
                 <header>
                   <div>
                     <h3>
-                      <a href={url} title={`Ver ${name}`} target="_blank">
+                      <a href={url} title={t("experience.link", { name })} target="_blank">
                         {name}
                       </a>
                     </h3>

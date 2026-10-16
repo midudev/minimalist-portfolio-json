@@ -1,0 +1,51 @@
+---
+import { LANGUAGES, getLangPath, useTranslations, type Lang } from "@/i18n"
+
+const { lang } = Astro.props as { lang: Lang }
+const t = useTranslations(lang)
+const langs = Object.entries(LANGUAGES) as [Lang, { name: string }][]
+---
+
+{
+  langs.length > 1 && (
+    <nav class="no-print">
+      {langs.map(([code, { name }]) => (
+        <a
+          href={getLangPath(code)}
+          hreflang={code}
+          lang={code}
+          title={t("lang.switch", { language: name })}
+          aria-current={code === lang ? "page" : undefined}
+        >
+          {code.toUpperCase()}
+        </a>
+      ))}
+    </nav>
+  )
+}
+
+<style>
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 4px;
+    max-width: 700px;
+    margin: -2rem auto 1rem;
+    font-size: 0.75rem;
+  }
+
+  a {
+    color: #777;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  a:hover {
+    color: #111;
+  }
+
+  a[aria-current] {
+    color: #111;
+    background: #eee;
+  }
+</style>

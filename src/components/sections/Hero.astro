@@ -1,5 +1,5 @@
 ---
-import { basics } from "@cv"
+import { getCV, useTranslations, type Lang } from "@/i18n"
 import Section from "@/components/Section.astro"
 import Mail from "@/icons/Mail.astro"
 import Phone from "@/icons/Phone.astro"
@@ -10,7 +10,10 @@ import WorldMap from "@/icons/WorldMap.astro"
 import Stackoverflow from "@/icons/Stackoverflow.astro"
 import type { SocialIcon } from "@/types"
 
-const { name, label, image, location, profiles, phone, email } = basics
+const { lang } = Astro.props as { lang: Lang }
+const { name, label, image, location, profiles, phone, email } =
+  getCV(lang).basics
+const t = useTranslations(lang)
 const { city, region } = location
 
 const SOCIAL_ICONS: SocialIcon = {
@@ -43,7 +46,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
           email && (
             <a
               href={`mailto:${email}`}
-              title={`Enviar un correo electrónico a ${name} al correo ${email}`}
+              title={t("hero.email", { name, email })}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -55,7 +58,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
           phone && (
             <a
               href={`tel:${phone}`}
-              title={`Llamar por teléfono a ${name} al número ${phone}`}
+              title={t("hero.phone", { name, phone })}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -70,7 +73,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
             return (
               <a
                 href={url}
-                title={`Visitar el perfil de ${name} en ${network}`}
+                title={t("hero.profile", { name, network })}
                 target="_blank"
                 rel="noopener noreferrer"
               >

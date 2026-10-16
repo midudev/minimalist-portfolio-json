@@ -1,17 +1,19 @@
 ---
-import { basics } from "@cv"
+import { LANGUAGES, getCV, getLangPath, type Lang } from "@/i18n"
 
 interface Props {
   title: string
+  lang: Lang
 }
 
-const { title } = Astro.props
+const { title, lang } = Astro.props
 
-const { image, summary, url } = basics
+const { image, summary, url } = getCV(lang).basics
+const alternates = Object.keys(LANGUAGES) as Lang[]
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>
@@ -19,6 +21,16 @@ const { image, summary, url } = basics
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" as="image" href={image} />
+    {
+      alternates.length > 1 &&
+        alternates.map((alternate) => (
+          <link
+            rel="alternate"
+            hreflang={alternate}
+            href={new URL(getLangPath(alternate), Astro.site ?? url)}
+          />
+        ))
+    }
 
     <meta property="og:url" content={url} />
     <meta property="og:type" content="website" />

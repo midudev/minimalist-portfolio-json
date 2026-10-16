@@ -1,0 +1,59 @@
+---
+import Layout from "@/layouts/Layout.astro"
+
+import About from "@/components/sections/About.astro"
+import Education from "@/components/sections/Education.astro"
+import Experience from "@/components/sections/Experience.astro"
+import Hero from "@/components/sections/Hero.astro"
+import Projects from "@/components/sections/Projects.astro"
+import Skills from "@/components/sections/Skills.astro"
+import KeyboardManager from "@/components/KeyboardManager.astro"
+import LanguagePicker from "@/components/LanguagePicker.astro"
+
+import {
+  DEFAULT_LANG,
+  LANGUAGES,
+  getCV,
+  useTranslations,
+  type Lang
+} from "@/i18n"
+
+export function getStaticPaths() {
+  return Object.keys(LANGUAGES).map((lang) => ({
+    params: { lang: lang === DEFAULT_LANG ? undefined : lang },
+    props: { lang }
+  }))
+}
+
+const lang = Astro.props.lang as Lang
+const { name, label } = getCV(lang).basics
+const t = useTranslations(lang)
+---
+
+<Layout title={t("meta.title", { name, label })} lang={lang}>
+  <main>
+    <LanguagePicker lang={lang} />
+    <Hero lang={lang} />
+    <About lang={lang} />
+    <Experience lang={lang} />
+    <Education lang={lang} />
+    <Projects lang={lang} />
+    <Skills lang={lang} />
+  </main>
+
+  <KeyboardManager lang={lang} />
+</Layout>
+
+<style>
+  main {
+    padding: 4rem;
+    margin: auto;
+    width: 100%;
+  }
+
+  @media (width <= 700px) {
+    main {
+      padding: 2rem;
+    }
+  }
+</style>
