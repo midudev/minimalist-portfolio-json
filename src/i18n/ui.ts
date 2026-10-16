@@ -1,6 +1,7 @@
 export const ui = {
   es: {
     "meta.title": "Portafolio de {name} - {label}",
+    "lang.label": "Idioma",
     "lang.switch": "Ver en {language}",
     "hero.email": "Enviar un correo electrónico a {name} al correo {email}",
     "hero.phone": "Llamar por teléfono a {name} al número {phone}",
@@ -16,6 +17,7 @@ export const ui = {
     "skills.title": "Habilidades",
     "date.present": "Actual",
     "palette.helper": "Pulsa {keys} para abrir la paleta de comandos",
+    "palette.open": "Abrir la paleta de comandos",
     "palette.search": "Buscar comando",
     "palette.empty": "No se encontraron comandos",
     "palette.select": "para seleccionar",
@@ -28,6 +30,7 @@ export const ui = {
   },
   en: {
     "meta.title": "{name}'s Portfolio - {label}",
+    "lang.label": "Language",
     "lang.switch": "View in {language}",
     "hero.email": "Send an email to {name} at {email}",
     "hero.phone": "Call {name} at {phone}",
@@ -43,6 +46,7 @@ export const ui = {
     "skills.title": "Skills",
     "date.present": "Present",
     "palette.helper": "Press {keys} to open the command palette",
+    "palette.open": "Open the command palette",
     "palette.search": "Search command",
     "palette.empty": "No commands found",
     "palette.select": "to select",

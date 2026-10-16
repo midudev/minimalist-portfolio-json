@@ -1,33 +1,43 @@
 ---
-// se ejecuta en el servidor o en build time <----
+interface Props {
+  title: string
+}
+
 const { title } = Astro.props
 ---
 
 <section>
-  {title && <h2>{title}</h2>}
-  <slot />
+  <h2>{title}</h2>
+  <div>
+    <slot />
+  </div>
 </section>
-
-<script>
-  // se ejecuta en el cliente <----
-</script>
 
 <style>
   section {
-    max-width: 700px;
-    margin: 0 auto 48px;
+    display: grid;
+    grid-template-columns: var(--label-col) minmax(0, 1fr);
+    column-gap: var(--gutter);
   }
 
   h2 {
-    margin-bottom: 8px;
-    font-weight: 700;
-    line-height: 1.5;
-    font-size: 1.5rem;
+    font-size: 0.9375rem;
+    line-height: 1.5rem;
   }
 
-  @media (width <= 700px) {
+  div {
+    min-width: 0;
+  }
+
+  @media screen and (width <= 720px) {
     section {
-      margin-bottom: 38px;
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 1rem;
+    }
+
+    h2 {
+      padding-bottom: 0.625rem;
+      border-bottom: 1px solid var(--color-rule);
     }
   }
 </style>

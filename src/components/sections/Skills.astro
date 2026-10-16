@@ -65,7 +65,8 @@ const t = useTranslations(lang)
 
         return (
           <li>
-            {Icon && <Icon />} <span>{name}</span>
+            {Icon && <Icon />}
+            <span>{name}</span>
           </li>
         )
       })
@@ -75,20 +76,36 @@ const t = useTranslations(lang)
 
 <style>
   ul {
-    display: inline-flex;
-    gap: 8px;
+    display: flex;
     flex-wrap: wrap;
+    gap: 0.375rem;
   }
 
   li {
-    align-items: center;
-    background: #eee;
-    border-radius: 6px;
-    color: black;
     display: flex;
-    font-size: 0.8rem;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.125rem 0.625rem;
+    color: var(--color-ink);
+    background: var(--color-wash);
+    border-radius: 0.375rem;
+    font-size: 0.8125rem;
     font-weight: 500;
-    gap: 4px;
-    padding: 0.2rem 0.6rem;
+    line-height: 1.5rem;
+  }
+
+  li :global(svg) {
+    flex: none;
+    width: 0.875rem;
+    height: 0.875rem;
+    color: var(--color-text);
+  }
+
+  @media print {
+    li {
+      padding: 0 0.5rem;
+      background: none;
+      border: 1px solid var(--color-rule);
+    }
   }
 </style>

@@ -1,5 +1,6 @@
 ---
 import Section from "../Section.astro"
+import Entry from "../Entry.astro"
 
 import { getCV, useTranslations, type Lang } from "@/i18n"
 
@@ -11,30 +12,19 @@ const t = useTranslations(lang)
 <Section title={t("education.title")}>
   <ul>
     {
-      education.map(({ institution, startDate, endDate, area }) => {
-        const startYear = new Date(startDate).getFullYear()
-        const endYear =
-          endDate != null ? new Date(endDate).getFullYear() : t("date.present")
-        const years = `${startYear} - ${endYear}`
-
-        return (
-          <li>
-            <article>
-              <header>
-                <div>
-                  <h3>{institution}</h3>
-                </div>
-
-                <time>{years}</time>
-              </header>
-
-              <footer>
-                <p>{area}</p>
-              </footer>
-            </article>
-          </li>
-        )
-      })
+      education.map(({ institution, url, startDate, endDate, area }) => (
+        <li>
+          <Entry
+            lang={lang}
+            title={institution}
+            url={url}
+            linkTitle={t("experience.link", { name: institution })}
+            subtitle={area}
+            startDate={startDate}
+            endDate={endDate}
+          />
+        </li>
+      ))
     }
   </ul>
 </Section>
@@ -43,30 +33,6 @@ const t = useTranslations(lang)
   ul {
     display: flex;
     flex-direction: column;
-    gap: 32px;
-  }
-
-  article h3 {
-    font-weight: 500;
-    color: #111;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 4px;
-  }
-
-  time {
-    color: #555;
-    font-size: 0.85rem;
-    min-width: 102px;
-  }
-
-  @media (width <= 700px) {
-    time {
-      text-align: right;
-    }
+    gap: 1.5rem;
   }
 </style>

@@ -46,14 +46,27 @@ const t = useTranslations(lang)
 
 <style>
   main {
-    padding: 4rem;
-    margin: auto;
-    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    max-width: calc(var(--label-col) + var(--gutter) + var(--content-col));
+    margin: 0 auto;
+    padding: 6rem 1.5rem 8rem;
   }
 
-  @media (width <= 700px) {
+  @media screen and (width <= 720px) {
     main {
-      padding: 2rem;
+      gap: 2.75rem;
+      padding: 4.5rem 1.25rem 7rem;
+    }
+  }
+
+  @media print {
+    main {
+      gap: 1.5rem;
+      max-width: none;
+      padding: 0;
     }
   }
 </style>

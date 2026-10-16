@@ -25,3 +25,10 @@ export const useTranslations = (lang: Lang) => {
   ) =>
     ui[lang][key].replace(/\{(\w+)\}/g, (match, param) => params[param] ?? match)
 }
+
+export const formatMonthYear = (lang: Lang, date: string) =>
+  new Intl.DateTimeFormat(lang, {
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC"
+  }).format(new Date(date))

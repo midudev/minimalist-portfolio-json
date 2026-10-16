@@ -1,6 +1,5 @@
 ---
 import { getCV, useTranslations, type Lang } from "@/i18n"
-import Section from "@/components/Section.astro"
 import Mail from "@/icons/Mail.astro"
 import Phone from "@/icons/Phone.astro"
 import X from "@/icons/X.astro"
@@ -11,10 +10,10 @@ import Stackoverflow from "@/icons/Stackoverflow.astro"
 import type { SocialIcon } from "@/types"
 
 const { lang } = Astro.props as { lang: Lang }
-const { name, label, image, location, profiles, phone, email } =
+const { name, label, image, location, profiles, phone, email, url } =
   getCV(lang).basics
-const t = useTranslations(lang)
 const { city, region } = location
+const t = useTranslations(lang)
 
 const SOCIAL_ICONS: SocialIcon = {
   GitHub,
@@ -26,163 +25,196 @@ const SOCIAL_ICONS: SocialIcon = {
 const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
 const linkedUrl = linkedInfo?.url
 
-const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
+const withoutProtocol = (link: string) => link.replace(/^https?:\/\//, "")
+
+const printInfo = [
+  email && { href: `mailto:${email}`, text: email },
+  phone && { href: `tel:${phone}`, text: phone },
+  url && { href: url, text: withoutProtocol(url) },
+  linkedUrl && { href: linkedUrl, text: withoutProtocol(linkedUrl) }
+].filter(Boolean) as { href: string; text: string }[]
 ---
 
-<Section>
-  <div class="container">
-    <div class="info">
-      <h1>{name}</h1>
-      <h2>{label}</h2>
-      <span>
-        <WorldMap />
-        {city}, {region}
-      </span>
-      <footer class="print">
-        {printInfo}
-      </footer>
-      <footer class="no-print">
-        {
-          email && (
+<header>
+  <div class="info">
+    <h1>{name}</h1>
+    <p class="label">{label}</p>
+    <p class="location">
+      <WorldMap />
+      {city}, {region}
+    </p>
+
+    <ul class="contact no-print">
+      {
+        email && (
+          <li>
             <a
               href={`mailto:${email}`}
               title={t("hero.email", { name, email })}
-              target="_blank"
-              rel="noopener noreferrer"
+              aria-label={t("hero.email", { name, email })}
             >
               <Mail />
             </a>
-          )
-        }
-        {
-          phone && (
+          </li>
+        )
+      }
+      {
+        phone && (
+          <li>
             <a
               href={`tel:${phone}`}
               title={t("hero.phone", { name, phone })}
-              target="_blank"
-              rel="noopener noreferrer"
+              aria-label={t("hero.phone", { name, phone })}
             >
               <Phone />
             </a>
-          )
-        }
-        {
-          profiles.map(({ network, url, username }) => {
-            const Icon = SOCIAL_ICONS[network]
+          </li>
+        )
+      }
+      {
+        profiles.map(({ network, url }) => {
+          const Icon = SOCIAL_ICONS[network]
 
-            return (
+          return (
+            <li>
               <a
                 href={url}
                 title={t("hero.profile", { name, network })}
+                aria-label={t("hero.profile", { name, network })}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Icon />
+                {Icon ? <Icon /> : network[0]}
               </a>
-            )
-          })
-        }
-      </footer>
-    </div>
-    <figure>
-      <img src={image} alt={name} />
-    </figure>
+            </li>
+          )
+        })
+      }
+    </ul>
+
+    <ul class="print">
+      {
+        printInfo.map(({ href, text }) => (
+          <li>
+            <a href={href}>{text}</a>
+          </li>
+        ))
+      }
+    </ul>
   </div>
-</Section>
+
+  <img src={image} alt={name} width="128" height="128" />
+</header>
 
 <style>
-  .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+  header {
+    display: grid;
+    grid-template-columns: var(--label-col) minmax(0, 1fr);
+    column-gap: var(--gutter);
+    align-items: start;
   }
 
   .info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding-right: 32px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    color: #444;
-    font-weight: 500;
-    font-size: 1.1rem;
-    text-wrap: balance;
+    grid-column: 2;
+    grid-row: 1;
   }
 
   img {
+    grid-column: 1;
+    grid-row: 1;
+    width: 6.5rem;
+    height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    width: 128px;
-    border-radius: 16px;
+    border-radius: 0.875rem;
+    background: var(--color-wash);
   }
 
-  span {
-    color: #666;
+  h1 {
+    font-size: clamp(2.125rem, 1.4rem + 2.6vw, 2.875rem);
+    font-weight: 700;
+    font-stretch: 112.5%;
+    letter-spacing: -0.03em;
+    line-height: 1.04;
+  }
+
+  .label {
+    max-width: 32rem;
+    margin-top: 0.875rem;
+    color: var(--color-text);
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    text-wrap: balance;
+  }
+
+  .location {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
-    font-size: 0.85rem;
-    letter-spacing: -0.05rem;
+    gap: 0.375rem;
+    margin-top: 0.5rem;
+    color: var(--color-muted);
+    font-size: 0.875rem;
   }
 
-  footer {
-    color: #555;
-    font-size: 0.65rem;
+  .contact {
     display: flex;
-    gap: 4px;
-    margin-top: 8px;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
   }
 
-  footer a {
-    color: #777;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #eee;
-    padding: 4px;
-    height: 32px;
-    width: 32px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
+  .contact a {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    color: var(--color-muted);
+    border: 1px solid var(--color-rule);
+    border-radius: 0.5rem;
+    transition:
+      color 0.15s ease,
+      background-color 0.15s ease,
+      border-color 0.15s ease;
   }
 
-  footer a:hover {
-    background: #eee;
-    border: 1px solid #ddd;
+  .contact a:hover {
+    color: var(--color-ink);
+    background: var(--color-wash);
+    border-color: var(--color-wash);
   }
 
-  @media (width <= 700px) {
-    .container {
-      flex-direction: column-reverse;
+  .print {
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+    margin-top: 0.875rem;
+    color: var(--color-text);
+    font-size: 0.875rem;
+  }
+
+  @media screen and (width <= 720px) {
+    header {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 1.5rem;
+    }
+
+    .info,
+    img {
+      grid-column: 1;
     }
 
     .info {
-      justify-content: center;
-      align-items: center;
-      padding-right: 0;
-      text-align: center;
+      grid-row: 2;
     }
 
-    figure {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    img {
+      width: 4.5rem;
+      border-radius: 0.75rem;
     }
+  }
 
-    h2 {
-      text-wrap: balance;
-    }
-
-    figure {
-      margin: 0 auto;
+  @media print {
+    img {
+      width: 5.5rem;
     }
   }
 </style>
