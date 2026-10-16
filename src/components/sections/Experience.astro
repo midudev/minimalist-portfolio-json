@@ -130,4 +130,10 @@ const t = useTranslations(lang)
       text-align: right;
     }
   }
+
+  @media print {
+    [data-title]:after {
+      display: none;
+    }
+  }
 </style>
