@@ -1,6 +1,9 @@
 {
   "name": "minimalist-portfolio-json",
   "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
