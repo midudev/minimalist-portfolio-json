@@ -54,7 +54,7 @@ Basado en el diseño de <a href="https://github.com/BartoszJarocki/cv">Bartosz J
 
 - [**Astro**](https://astro.build/) - El framework web de la nueva época.
 - [**Typescript**](https://www.typescriptlang.org/) - JavaScript con sintaxis de tipado.
-- [**Ninja Keys**](https://github.com/ssleptsov/ninja-keys) - Menu desplegable con atajos de teclado hecho en puro Javascript.
+- [**HotKeyPad**](https://github.com/jesubohr/hotkeypad) - Paleta de comandos con atajos de teclado hecha en puro JavaScript.
 
 
 ## 🚀 Empezar
@@ -62,12 +62,12 @@ Basado en el diseño de <a href="https://github.com/BartoszJarocki/cv">Bartosz J
 ### 1. Usa este [repo](https://github.com/midudev/minimalist-portfolio-json) como _template_ de un proyecto de Astro
 
 
+- Necesitas [Node.js](https://nodejs.org/) 22.22 o superior.
 - Yo uso [pnpm](https://pnpm.io/installation) como gestor de dependencias y empaquetador.
 
 ```bash
-# Activa pnpm en MacOS, WSL & Linux:
-corepack enable
-corepack prepare pnpm@latest --activate
+# Instala pnpm
+npm install -g pnpm
 
 # Inicializa el proyecto
 pnpm create astro@latest -- --template midudev/minimalist-portfolio-json
@@ -75,6 +75,13 @@ pnpm create astro@latest -- --template midudev/minimalist-portfolio-json
 
 ### 2. Añade tu contenido:
 Edita el archivo `cv.json` para crear tu propio Portafolio/CV imprimible.
+
+#### Idiomas
+
+El portafolio se genera en español en `/` y en inglés en `/en/` (a partir de `cv_english.json`). Los idiomas se configuran en `src/i18n/index.ts` y los textos de la interfaz en `src/i18n/ui.ts`:
+
+- **Solo un idioma:** elimina `en` de `LANGUAGES` junto a su `import` y borra `cv_english.json`. El selector de idioma desaparece.
+- **Añadir un idioma:** crea su JSON (por ejemplo `cv_french.json`), impórtalo en `LANGUAGES` y añade sus textos en `ui.ts`.
 ### 3. Lanza el servidor de desarrollo:
 
 ```bash
