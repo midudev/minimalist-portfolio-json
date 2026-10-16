@@ -49,6 +49,23 @@ const { image, summary, url } = basics
       monospace;
     background: #fff;
     letter-spacing: -0.025rem;
+    scrollbar-width: thin;
+    scrollbar-color: #767272a6 transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #767272a6;
+    border-radius: 1rem;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #585858;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
   }
 
   body,
