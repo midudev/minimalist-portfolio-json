@@ -94,6 +94,13 @@ pnpm dev
 1. Abre [**http://localhost:4321**](http://localhost:4321/) en tu navegador para ver el resultado 🚀
 
 
+## Desplegar en Wasmer
+
+[![Deploy to Wasmer](https://img.shields.io/badge/Deploy%20to-Wasmer-171717?logo=wasmer&logoColor=white)](https://wasmer.io/apps/create?github=midudev%2Fminimalist-portfolio-json)
+
+Wasmer detecta el proyecto de Astro, ejecuta `pnpm install` y `pnpm run build` y sirve la carpeta `dist` generada como sitio estático. El botón abre la página de importación de Wasmer para este repositorio público, donde revisas la configuración y haces clic en Deploy; no crea una copia del repositorio en tu cuenta de GitHub. Para publicar tu propio CV, usa este repo como template, edita tanto `cv.json` como `cv_english.json` e importa tu repositorio en Wasmer.
+
+
 ## 🧞 Comandos
 
 |     | Comando          | Acción                                        |
